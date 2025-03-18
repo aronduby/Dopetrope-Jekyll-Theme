@@ -1752,7 +1752,6 @@ ul.social li a.fa-google-plus:hover {
   text-align: center;
   position: relative;
   padding: 8em 0;
-  margin: 4em 0 0 0;
 }
 #banner header {
   background-color: rgba(34, 30, 31, 0.98);
@@ -1778,6 +1777,7 @@ ul.social li a.fa-google-plus:hover {
 #intro {
   text-align: center;
   overflow: hidden;
+  background: #fff;
 }
 #intro section {
   margin: 3em 0;
