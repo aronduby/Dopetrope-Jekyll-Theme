@@ -1,6 +1,7 @@
 title: Dopetrope
 description: Dopetrope template for Jekyll
 paginate: 10
+baseUrl: /
 
 defaults:
   -

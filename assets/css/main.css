@@ -1483,6 +1483,10 @@ ul.dates h3 {
 }
 ul.dates p {
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 ul.dates li:first-child {
   border-top: 0;
