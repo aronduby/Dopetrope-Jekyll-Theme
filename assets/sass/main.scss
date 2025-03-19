@@ -704,7 +704,8 @@
 					line-height: 1.5em;
 				}
 
-				&.fa-facebook {
+				&.fa-facebook,
+				&.fa-facebook-f {
 					background: #3c5a98;
 
 					&:hover {
@@ -728,7 +729,8 @@
 					}
 				}
 
-				&.fa-linkedin {
+				&.fa-linkedin,
+				&.fa-linkedin-in {
 					background: #006599;
 
 					&:hover {

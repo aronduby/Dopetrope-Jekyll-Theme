@@ -1539,10 +1539,10 @@ ul.social li a:before {
   font-size: 2em;
   line-height: 1.5em;
 }
-ul.social li a.fa-facebook {
+ul.social li a.fa-facebook, ul.social li a.fa-facebook-f {
   background: #3c5a98;
 }
-ul.social li a.fa-facebook:hover {
+ul.social li a.fa-facebook:hover, ul.social li a.fa-facebook-f:hover {
   background: #4c6aa8;
 }
 ul.social li a.fa-twitter {
@@ -1557,10 +1557,10 @@ ul.social li a.fa-dribbble {
 ul.social li a.fa-dribbble:hover {
   background: #d4477b;
 }
-ul.social li a.fa-linkedin {
+ul.social li a.fa-linkedin, ul.social li a.fa-linkedin-in {
   background: #006599;
 }
-ul.social li a.fa-linkedin:hover {
+ul.social li a.fa-linkedin:hover, ul.social li a.fa-linkedin-in:hover {
   background: #1075a9;
 }
 ul.social li a.fa-tumblr {
