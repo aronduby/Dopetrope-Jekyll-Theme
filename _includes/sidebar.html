@@ -1,0 +1,29 @@
+{% if page.sidebar %}
+    {% assign sidebarFile = page.sidebar %}
+{% elsif layout.sidebar %}
+    {% assign sidebarFile = layout.sidebar %}
+{% else %}
+    {% assign sidebarFile = "default" %}
+{% endif %}
+
+{% if site.debug %}
+    <table>
+        <caption>Sidebar To Use</caption>
+        <tr>
+            <th>page</th>
+            <td><code>{{ page.sidebar }}</code></td>
+        </tr>
+        <tr>
+            <th>layout</th>
+            <td><code>{{ layout.sidebar }}</code></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                {{ sidebarFile | prepend: "sidebar/" | append: ".html" }}
+            </td>
+        </tr>
+    </table>
+{% endif %}
+
+{% include {{ sidebarFile | prepend: "sidebar/" | append: ".html" }} %}
