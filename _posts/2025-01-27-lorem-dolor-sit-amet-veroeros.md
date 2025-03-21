@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "Lorem Dolor sit Amet Veroeros"
 date: 2025-01-27 22:12:34 -0400
-featuredImage:  pic05.jpg
+featuredImage:  pic01.jpg
 ---
 
 Qui facer ex enim augue. Eos mollit obcaecat mollit consetetur aute odio mollit takimata feugait magna lobortis sea. 

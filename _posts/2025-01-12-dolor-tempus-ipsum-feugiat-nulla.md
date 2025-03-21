@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Dolor Tempus Ipsum Feugiat Nulla"
 date: 2025-01-12 22:08:40 -0400
 featuredImage: pic08.jpg

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Ipsum Sed Blandit Nisl Consequat"
 date: 2025-01-23 22:11:49 -0400
 featuredImage:  pic07.jpg 

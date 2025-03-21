@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Magna Tempus Lorem Feugiat"
 date: 2025-01-15 22:10:52 -0400
 featuredImage:  pic09.jpg 
