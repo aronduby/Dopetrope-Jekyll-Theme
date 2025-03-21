@@ -1,0 +1,47 @@
+{% if include.dateForSubtitle != nil %}
+    {% assign dateForSubtitle = include.dateForSubtitle %}
+{% elsif  page.dateForSubtitle != nil %}
+    {% assign dateForSubtitle = page.dateForSubtitle %}
+{% elsif layout.dateForSubtitle != nil %}
+    {% assign dateForSubtitle = layout.dateForSubtitle %}
+{% else %}
+    {% assign dateForSubtitle = false %}
+{% endif %}
+
+
+{%if page.featuredImage %}
+    <div class="image featured"><img src="images/{{ page.featuredImage }}" alt="" /></div>
+{% endif %}
+
+<header>
+    <h1>{{ page.title }}</h1>
+    {%if dateForSubtitle == true && page.date %}
+        <p>posted <relative-time datetime="{{ page.date }}"></relative-time></p>
+    {% elsif page.subtitle && page.subtitle != '' %}
+        <p>{{ page.subtitle }}</p>
+    {% endif %}
+</header>
+
+{% if site.debug %}
+<table>
+    <caption>Date for Subtitle</caption>
+    <tr>
+        <th>include</th>
+        <td><code>{{ include.dateForSubtitle }}</code></td>
+    </tr>
+    <tr>
+        <th>page</th>
+        <td><code>{{ page.dateForSubtitle }}</code></td>
+    </tr>
+    <tr>
+        <th>layout</th>
+        <td><code>{{ layout.dateForSubtitle }}</code></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            {{ dateForSubtitle }}
+        </td>
+    </tr>
+</table>
+{% endif %}
