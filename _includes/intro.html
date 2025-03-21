@@ -1,38 +1,24 @@
 <section id="intro">
     <div class="container">
         <div class="row">
-            <div class="col-4 col-12-medium">
-                <section class="first">
-                    <i class="icon solid featured fa-cog"></i>
-                    <header>
-                        <h2>Ipsum consequat</h2>
-                    </header>
-                    <p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
-                </section>
-            </div>
-            <div class="col-4 col-12-medium">
-                <section class="middle">
-                    <i class="icon solid featured alt fa-bolt"></i>
-                    <header>
-                        <h2>Magna etiam dolor</h2>
-                    </header>
-                    <p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
-                </section>
-            </div>
-            <div class="col-4 col-12-medium">
-                <section class="last">
-                    <i class="icon solid featured alt2 fa-star"></i>
-                    <header>
-                        <h2>Tempus adipiscing</h2>
-                    </header>
-                    <p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
-                </section>
-            </div>
+            {% assign order = "first, middle, last" | split: ", " %}
+            {% for item in site.data.i18n.home.intro.items %}
+                <div class="col-4 col-12-medium">
+                    <section class="{{ order[forloop.index0] }}">
+                        <i class="icon solid featured {{ item.icon }} {{ item.iconVariant }}"></i>
+                        <header>
+                            <h2>{{ item.title }}</h2>
+                        </header>
+                        <p>{{ item.description }}</p>
+                    </section>
+                </div>
+            {% endfor %}
         </div>
         <footer>
             <ul class="actions">
-                <li><a href="#" class="button large">Get Started</a></li>
-                <li><a href="#" class="button alt large">Learn More</a></li>
+                {% for action in site.data.i18n.home.intro.actions %}
+                    <li><a href="{{ action.href }}" class="button large {{ action.variant }}">{{ action.title }}</a></li>
+                {% endfor %}
             </ul>
         </footer>
     </div>
