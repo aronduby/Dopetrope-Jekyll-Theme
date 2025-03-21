@@ -402,6 +402,12 @@
 				left: 1.75em;
 				top: 1.75em;
 				margin: -4.5em 0 4.25em -3.5em;
+
+				img {
+					max-height: 36vh;
+					aspect-ratio: 1.8;
+					object-fit: cover;
+				}
 			}
 		}
 

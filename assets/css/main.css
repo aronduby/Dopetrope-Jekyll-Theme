@@ -1262,6 +1262,11 @@ footer {
   top: 1.75em;
   margin: -4.5em 0 4.25em -3.5em;
 }
+.box .image.featured img {
+  max-height: 36vh;
+  aspect-ratio: 1.8;
+  object-fit: cover;
+}
 .box.post > header {
   padding-top: 1em;
   margin: 0 0 2em 0;
