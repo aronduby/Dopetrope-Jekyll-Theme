@@ -127,7 +127,11 @@ sup {
 blockquote {
   border-left: solid 0.75em #dddddd;
   padding: 1em 0 1em 1.5em;
+  margin-left: 2em;
   font-style: italic;
+}
+blockquote > p:last-child {
+  margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -146,6 +150,20 @@ h2 {
 
 h3 {
   font-size: 1.35em;
+  color: #40393b;
+}
+
+h4, h5, h6 {
+  font-size: 1.2em;
+  color: #4d4547;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
 }
 
 a {
@@ -167,7 +185,7 @@ hr {
   margin: 2em 0 2em 0;
 }
 
-p, ul, ol, dl, table {
+p, ul, ol, dl, table, blockquote {
   margin-bottom: 2em;
 }
 
@@ -1244,17 +1262,27 @@ footer {
   top: 1.75em;
   margin: -4.5em 0 4.25em -3.5em;
 }
-.box.post header {
+.box.post > header {
   padding-top: 1em;
   margin: 0 0 2em 0;
 }
-.box.post h2 {
+.box.post > header h1 {
   font-size: 2.5em;
   letter-spacing: -0.015em;
+  padding: 0;
+  margin: 0;
 }
-.box.post header > p {
+.box.post > header p {
   margin-top: 1.25em;
   font-size: 1.25em;
+}
+.box.post h1, .box.post h2, .box.post h3, .box.post h4, .box.post h5, .box.post h6 {
+  padding-top: 1rem;
+  margin: 0 0 2rem 0;
+}
+.box.post h4, .box.post h5, .box.post h6 {
+  padding-top: 0.5rem;
+  margin-bottom: 0.5em;
 }
 .box footer ul.actions {
   margin-bottom: 0;

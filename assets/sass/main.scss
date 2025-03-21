@@ -150,7 +150,12 @@
 	blockquote {
 		border-left: solid 0.75em #dddddd;
 		padding: 1em 0 1em 1.5em;
+		margin-left: 2em;
 		font-style: italic;
+
+		> p:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -169,6 +174,20 @@
 
 	h3 {
 		font-size: 1.35em;
+		color: lighten(#252122, 10%);
+	}
+
+	h4, h5, h6 {
+		font-size: 1.2em;
+		color: lighten(#252122, 15%);
+	}
+
+	h5 {
+		font-size: 1.1em;
+	}
+
+	h6 {
+		font-size: 1em;
 	}
 
 	a {
@@ -191,7 +210,7 @@
 		margin: 2em 0 2em 0;
 	}
 
-	p, ul, ol, dl, table {
+	p, ul, ol, dl, table, blockquote {
 		margin-bottom: 2em;
 	}
 
@@ -387,21 +406,31 @@
 		}
 
 		&.post {
-			header {
+			> header {
 				padding-top: 1em;
 				margin: 0 0 2em 0;
-			}
 
-			h2 {
-				font-size: 2.5em;
-				letter-spacing: -0.015em;
-			}
+				h1 {
+					font-size: 2.5em;
+					letter-spacing: -0.015em;
+					padding: 0;
+					margin: 0;
+				}
 
-			header {
-				> p {
+				p {
 					margin-top: 1.25em;
 					font-size: 1.25em;
 				}
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				padding-top: 1rem;
+				margin: 0 0 2rem 0;
+			}
+
+			h4, h5, h6 {
+				padding-top: .5rem;
+				margin-bottom: .5em;
 			}
 		}
 
