@@ -1132,6 +1132,12 @@
 		}
 	}
 
+/* Relative Time */
+	relative-time:state(relative) {
+		cursor: help;
+		text-decoration: underline dotted .08em rgba(0,0,0,.3);
+	}
+
 /* XLarge */
 
 	@include breakpoint('<=xlarge') {

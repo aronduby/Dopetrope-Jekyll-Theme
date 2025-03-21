@@ -1898,6 +1898,12 @@ ul.social li a.fa-google-plus:hover {
   padding: 0.85em 2.25em 0.85em 2.25em;
 }
 
+/* Relative Time */
+relative-time:state(relative) {
+  cursor: help;
+  text-decoration: underline dotted 0.08em rgba(0, 0, 0, 0.3);
+}
+
 /* XLarge */
 @media screen and (max-width: 1680px) {
   /* Basic */
