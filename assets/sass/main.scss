@@ -981,13 +981,12 @@
 /* Banner */
 
 	#banner {
-		background: #CCE8F4 url('../../images/pic01.jpg');
-		background-position: center center;
+		background: #CCE8F4 url('../../images/pic01.jpg') no-repeat center center;
 		background-size: auto 100%;
-		background-repeat: no-repeat;
 		text-align: center;
 		position: relative;
 		padding: 8em 0;
+		margin: 0;
 
 		header {
 			background-color: rgba(34, 30, 31, 0.98);
@@ -1093,6 +1092,10 @@
 			h2 {
 				background: #f7f7f7 url('images/bg.png');
 			}
+		}
+
+		.homepage & {
+			padding-top: 0;
 		}
 	}
 
@@ -1219,7 +1222,6 @@
 
 			#banner {
 				padding: 6em 0;
-				margin: 3em 0 0 0;
 			}
 
 		/* Intro */
@@ -1689,7 +1691,6 @@
 
 			#banner {
 				padding: 6em 0;
-				margin: 2em 0 0 0;
 
 				header {
 					padding: 1.5em 1em 1.5em 1em;

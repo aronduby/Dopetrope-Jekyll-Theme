@@ -1777,13 +1777,12 @@ ul.social li a.fa-google-plus:hover {
 
 /* Banner */
 #banner {
-  background: #CCE8F4 url("../../images/pic01.jpg");
-  background-position: center center;
+  background: #CCE8F4 url("../../images/pic01.jpg") no-repeat center center;
   background-size: auto 100%;
-  background-repeat: no-repeat;
   text-align: center;
   position: relative;
   padding: 8em 0;
+  margin: 0;
 }
 #banner header {
   background-color: rgba(34, 30, 31, 0.98);
@@ -1874,6 +1873,9 @@ ul.social li a.fa-google-plus:hover {
 #main .major h2 {
   background: #f7f7f7 url("images/bg.png");
 }
+.homepage #main {
+  padding-top: 0;
+}
 
 /* Footer */
 #footer {
@@ -1963,7 +1965,6 @@ relative-time:state(relative) {
   /* Banner */
   #banner {
     padding: 6em 0;
-    margin: 3em 0 0 0;
   }
   /* Intro */
   #intro {
@@ -2335,7 +2336,6 @@ relative-time:state(relative) {
   /* Banner */
   #banner {
     padding: 6em 0;
-    margin: 2em 0 0 0;
   }
   #banner header {
     padding: 1.5em 1em 1.5em 1em;
