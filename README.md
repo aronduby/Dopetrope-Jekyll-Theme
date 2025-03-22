@@ -2,6 +2,26 @@
 
 Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 
+## Todo Next
+- Specify sidebar status as a layout/page variable?
+  - left, right, none
+    - default > base
+    - landing is basically just base/default
+    - content/default gets sidebar variable left, right, none  
+
+- Nav as data
+  - should those data files really be under i18n?
+  - where do we draw the line between data and strings?
+  - if it's in a data file it probably doesn't need a i18n
+
+- Projects collection
+
+- Horizontal blog post option on the homepage to just show one
+
+- Finish chunking out the footer
+
+- Better fake images than the blurred
+
 ---
 
 # Dopetrope by HTML5 UP

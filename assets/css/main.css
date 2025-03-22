@@ -137,6 +137,7 @@ blockquote > p:last-child {
 h1, h2, h3, h4, h5, h6 {
   color: #252122;
   font-weight: 700;
+  line-height: 1.4em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1788,6 +1789,7 @@ ul.social li a.fa-google-plus:hover {
   position: relative;
   padding: 8em 0;
   margin: 0;
+  border-bottom: solid 1px #ccc;
 }
 #banner header {
   background-color: rgba(34, 30, 31, 0.98);
@@ -1799,7 +1801,6 @@ ul.social li a.fa-google-plus:hover {
   color: #fff;
   font-weight: 700;
   font-size: 2.5em;
-  margin: 0 0 0.65em 0;
 }
 #banner header p {
   color: #d52349;
@@ -1814,6 +1815,8 @@ ul.social li a.fa-google-plus:hover {
   text-align: center;
   overflow: hidden;
   background: #fff;
+  border-bottom: solid 1px #ccc;
+  margin-bottom: 4em;
 }
 #intro section {
   margin: 3em 0;
@@ -1855,7 +1858,7 @@ ul.social li a.fa-google-plus:hover {
   min-width: 12em;
 }
 #intro footer {
-  margin: 0;
+  margin: 2em 0 4em 0;
 }
 
 /* Main */
@@ -1939,19 +1942,8 @@ relative-time:state(relative) {
   text-decoration: underline dotted 0.08em rgba(0, 0, 0, 0.3);
 }
 
-/* XLarge */
-@media screen and (max-width: 1680px) {
-  /* Basic */
-  body, input, textarea, select {
-    font-size: 12pt;
-  }
-}
 /* Large */
 @media screen and (max-width: 1280px) {
-  /* Basic */
-  body, input, textarea, select {
-    font-size: 11pt;
-  }
   /* Section/Article */
   header.major {
     margin: 0.75em 0 2.5em 0;
@@ -2034,6 +2026,10 @@ relative-time:state(relative) {
   /* Nav */
   #nav {
     display: none;
+  }
+  /* Banner */
+  #banner {
+    font-size: 10pt;
   }
   /* Intro */
   #intro {
@@ -2217,9 +2213,6 @@ relative-time:state(relative) {
 /* Small */
 @media screen and (max-width: 736px) {
   /* Basic */
-  body, input, textarea, select {
-    font-size: 11pt;
-  }
   h2, h3, h4, h5, h6 {
     font-size: 1.25em;
   }
@@ -2286,6 +2279,9 @@ relative-time:state(relative) {
     top: 0.8em;
   }
   /* Dates */
+  ul.dates {
+    font-size: 12.5pt;
+  }
   ul.dates li {
     padding-left: 6em;
   }
@@ -2341,6 +2337,7 @@ relative-time:state(relative) {
   /* Banner */
   #banner {
     padding: 6em 0;
+    font-size: inherit;
   }
   #banner header {
     padding: 1.5em 1em 1.5em 1em;
@@ -2350,7 +2347,6 @@ relative-time:state(relative) {
   #banner header h2 {
     font-size: 1.5em;
     line-height: 1.5em;
-    margin: 0 0 0.25em 0;
   }
   #banner header p {
     font-size: 1.2em;

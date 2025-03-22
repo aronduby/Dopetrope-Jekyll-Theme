@@ -161,6 +161,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		color: #252122;
 		font-weight: 700;
+		line-height: 1.4em;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -993,6 +994,7 @@
 		position: relative;
 		padding: 8em 0;
 		margin: 0;
+		border-bottom: solid 1px #ccc;
 
 		header {
 			background-color: rgba(34, 30, 31, 0.98);
@@ -1004,7 +1006,6 @@
 				color: #fff;
 				font-weight: 700;
 				font-size: 2.5em;
-				margin: 0 0 0.65em 0;
 			}
 
 			p {
@@ -1023,6 +1024,8 @@
 		text-align: center;
 		overflow: hidden;
 		background: #fff;
+		border-bottom: solid 1px #ccc;
+		margin-bottom: 4em;
 
 		section {
 			margin: 3em 0;
@@ -1071,7 +1074,7 @@
 		}
 
 		footer {
-			margin: 0;
+			margin: 2em 0 4em 0;
 		}
 	}
 
@@ -1176,27 +1179,9 @@
 		text-decoration: underline dotted .08em rgba(0,0,0,.3);
 	}
 
-/* XLarge */
-
-	@include breakpoint('<=xlarge') {
-
-		/* Basic */
-
-			body, input, textarea, select {
-				font-size: 12pt;
-			}
-
-	}
-
 /* Large */
 
 	@include breakpoint('<=large') {
-
-		/* Basic */
-
-			body, input, textarea, select {
-				font-size: 11pt;
-			}
 
 		/* Section/Article */
 
@@ -1327,6 +1312,12 @@
 
 			#nav {
 				display: none;
+			}
+
+		/* Banner */
+
+			#banner {
+				font-size: 10pt;
 			}
 
 		/* Intro */
@@ -1511,10 +1502,6 @@
 
 		/* Basic */
 
-			body, input, textarea, select {
-				font-size: 11pt;
-			}
-
 			h2, h3, h4, h5, h6 {
 				font-size: 1.25em;
 			}
@@ -1617,6 +1604,8 @@
 		/* Dates */
 
 			ul.dates {
+				font-size: 12.5pt;
+
 				li {
 					padding-left: 6em;
 				}
@@ -1697,6 +1686,7 @@
 
 			#banner {
 				padding: 6em 0;
+				font-size: inherit;
 
 				header {
 					padding: 1.5em 1em 1.5em 1em;
@@ -1706,7 +1696,6 @@
 					h2 {
 						font-size: 1.5em;
 						line-height: 1.5em;
-						margin: 0 0 0.25em 0;
 					}
 
 					p {
