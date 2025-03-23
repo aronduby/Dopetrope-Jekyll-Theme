@@ -3,11 +3,6 @@
 Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 
 ## Todo Next
-- Nav as data
-  - should those data files really be under i18n?
-  - where do we draw the line between data and strings?
-  - if it's in a data file it probably doesn't need a i18n
-
 - Projects collection
 
 - Horizontal blog post option on the homepage to just show one

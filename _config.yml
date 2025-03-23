@@ -43,6 +43,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      navKey: "right-sidebar"
 
 # don't track intellij editor stuff that changes every save
 exclude:

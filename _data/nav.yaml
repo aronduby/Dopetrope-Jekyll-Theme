@@ -1,0 +1,65 @@
+#
+# Nav Items
+# This is the data used for generating the site's navigation
+#
+# items:
+#   title: The title to display as the link
+#   url: The url the link goes to, relative is resolved with the site.baseUrl value
+#     [empty string]  site.baseUrl
+#     starts with #   the current page (with site.baseUrl) with the jump
+#     starts with /   absolute path, no use of site.baseUrl
+#     else            adds the site.baseUrl
+#   key?: [optional] string key to identify this item, if the current page has a matching `navKey` variable it will
+#     display the nav item as current. Useful to associate collections with top level nav items (like blog posts) and
+#     setting that as a config default
+#   children?: [optional] list of child nav items for this item
+#
+
+items:
+  -
+    title: Home
+    url:
+  -
+    title: Dropdown
+    url: "#"
+    children:
+      -
+        title: Lorem ipsum dolor
+        url: "#"
+      -
+        title: Magna phasellus
+        url: "#"
+      -
+        title: Etiam dolore nisl
+        url: "#"
+      -
+        title: Phasellus consequat
+        url: "#"
+        children:
+          -
+            title: Etiam dolore nisl
+            url: "#"
+          -
+            title: Veroeros feugiat
+            url: "#"
+          -
+            title: Nisl sed aliquam
+            url: "#"
+          -
+            title: Dolore adipiscing
+            url: "#"
+      -
+        title: Veroeros feugiat
+        url: "#"
+  -
+    title: Left Sidebar
+    url: left-sidebar.html
+    key: left-sidebar
+  -
+    title: Right Sidebar
+    url: right-sidebar.html
+    key: right-sidebar
+  -
+    title: No Sidebar
+    url: no-sidebar.html
+    key: no-sidebar
