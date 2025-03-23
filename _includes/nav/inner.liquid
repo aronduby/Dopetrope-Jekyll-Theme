@@ -9,20 +9,21 @@
         {%  elsif first == '/' %}
             {%  assign url = item.url %}
         {% else %}
-            {% assign url = item.url | prepend: site.baseUrl %}
+            {% if item.url contains '://' %}
+                {% assign url = item.url %}
+            {% else %}
+                {% assign url = item.url | prepend: site.baseUrl %}
+            {% endif %}
         {% endif %}
 
-        {% assign pageMatches = false %}
-        {%  if page.url == url %}
-            {% assign pageMatches = true %}
+        {% assign current = false %}
+        {% if page.url == url %}
+            {% assign current = true %}
+        {% elsif page.navKey and item.key and page.navKey == item.key %}
+            {% assign current = true %}
         {% endif %}
 
-        {% assign keyMatches = false %}
-        {%  if page.navKey and item.key and page.navKey == item.key %}
-            {% assign keyMatches = true %}
-        {% endif %}
-
-        <li {% if pageMatches or keyMatches %}class="current"{% endif %}>
+        <li {% if current %}class="current"{% endif %}>
             <a href="{{ url }}">{{ item.title }}</a>
             {% if item.children %}
                 {%  include nav/inner.liquid items=item.children %}
