@@ -3,6 +3,33 @@ description: Dopetrope template for Jekyll
 paginate: 10
 baseUrl: /
 
+#
+# Variable Flows
+# We have a number of variables that are overridable by more specific instances, meaning...
+#   - Setting it as a param on an include (when used within an include file)
+#   - Setting it on a page overrides the layout
+#   - Setting it on a layout overrides the site
+#   - The setting on the site is used as a fallback
+#
+# This means _we_ can't set this as part of the defaults because that overrides the page setting, which is the most
+# specific, and wouldn't allow fallback to the layout or site. HOWEVER, _users of the theme_ are welcome to add their
+# own settings to the defaults.
+#
+
+#
+# Sidebar Variables
+# Used for determining the location (or lack there of) of the sidebar, and which file we use for the content
+# This uses the variable flow described above to determine the final variable
+#
+sidebar:
+  location: "right"
+  file: "default"
+
+#
+# Most variable flows include a debug table to show the flow and the final result. Set this to true to display them.
+#
+debug: false
+
 defaults:
   -
     scope:
@@ -16,3 +43,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+# don't track intellij editor stuff that changes every save
+exclude:
+  - ".idea/"

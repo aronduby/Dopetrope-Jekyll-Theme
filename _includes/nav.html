@@ -1,6 +1,6 @@
 <nav id="nav">
     <ul>
-        <li class="current"><a href="index.html">Home</a></li>
+        <li {% if page.url == "/" %}class="current"{% endif %}><a href="{{ site.baseUrl }}">Home</a></li>
         <li>
             <a href="#">Dropdown</a>
             <ul>
@@ -20,8 +20,8 @@
                 <li><a href="#">Veroeros feugiat</a></li>
             </ul>
         </li>
-        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-        <li><a href="no-sidebar.html">No Sidebar</a></li>
+        <li {% if page.url == "/left-sidebar.html" %}class="current"{% endif %}><a href="left-sidebar.html">Left Sidebar</a></li>
+        <li {% if page.url == "/right-sidebar.html" %}class="current"{% endif %}><a href="right-sidebar.html">Right Sidebar</a></li>
+        <li {% if page.url == "/no-sidebar.html" %}class="current"{% endif %}><a href="no-sidebar.html">No Sidebar</a></li>
     </ul>
 </nav>

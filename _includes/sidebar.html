@@ -1,9 +1,9 @@
-{% if page.sidebar %}
-    {% assign sidebarFile = page.sidebar %}
-{% elsif layout.sidebar %}
-    {% assign sidebarFile = layout.sidebar %}
+{% if page.sidebar.file %}
+    {% assign sidebarFile = page.sidebar.file %}
+{% elsif layout.sidebar.file %}
+    {% assign sidebarFile = layout.sidebar.file %}
 {% else %}
-    {% assign sidebarFile = "default" %}
+    {% assign sidebarFile = site.sidebar.file %}
 {% endif %}
 
 {% if site.debug %}
@@ -11,11 +11,15 @@
         <caption>Sidebar To Use</caption>
         <tr>
             <th>page</th>
-            <td><code>{{ page.sidebar }}</code></td>
+            <td><code>{{ page.sidebar.file }}</code></td>
         </tr>
         <tr>
             <th>layout</th>
-            <td><code>{{ layout.sidebar }}</code></td>
+            <td><code>{{ layout.sidebar.file }}</code></td>
+        </tr>
+        <tr>
+            <th>site</th>
+            <td><code>{{ site.sidebar.file }}</code></td>
         </tr>
         <tr>
             <td></td>

@@ -1,13 +1,67 @@
-{% include site-pre.html %}
+---
+layout: base
+---
 
-    {% include header.html %}
+{% if page.sidebar.location %}
+    {% assign sidebarLocation = page.sidebar.location %}
+{% elsif layout.sidebar.location %}
+    {% assign sidebarLocation = layout.sidebar.location %}
+{% else %}
+    {% assign sidebarLocation = site.sidebar.location %}
+{% endif %}
 
-    <section id="main">
+{% if site.debug %}
+    <table>
+        <caption>Sidebar Location</caption>
+        <tr>
+            <th>page</th>
+            <td><code>{{ page.sidebar.location }}</code></td>
+        </tr>
+        <tr>
+            <th>layout</th>
+            <td><code>{{ layout.sidebar.location }}</code></td>
+        </tr>
+        <tr>
+            <th>site</th>
+            <td><code>{{ site.sidebar.location }}</code></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><code>{{ sidebarLocation }}</code></td>
+        </tr>
+    </table>
+{% endif %}
+
+{% if sidebarLocation == "left" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-4 col-12-medium">
+                {% include sidebar.html %}
+            </div>
+            <aside class="col-8 col-12-medium imp-medium">
+
+                {{ content }}
+
+            </aside>
+        </div>
+    </div>
+{% elsif sidebarLocation == 'right' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8 col-12-medium">
+
+                {{ content }}
+
+            </div>
+            <aside class="col-4 col-12-medium">
+                {% include sidebar.html %}
+            </aside>
+        </div>
+    </div>
+{% elsif sidebarLocation == 'none' %}
+    <div class="container">
 
         {{ content }}
 
-    </section>
-
-    {% include footer.html %}
-
-{% include site-post.html %}
+    </div>
+{% endif %}
