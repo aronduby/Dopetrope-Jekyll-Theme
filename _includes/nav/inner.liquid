@@ -25,7 +25,7 @@
         <li {% if pageMatches or keyMatches %}class="current"{% endif %}>
             <a href="{{ url }}">{{ item.title }}</a>
             {% if item.children %}
-                {%  include nav-inner.html.liquid items=item.children %}
+                {%  include nav/inner.liquid items=item.children %}
             {% endif %}
         </li>
     {% endfor %}
