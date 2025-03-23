@@ -1,4 +1,4 @@
-@import url("fontawesome-all.min.css");
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic");
 /*
 	Dopetrope by HTML5 UP
@@ -1616,30 +1616,29 @@ ul.social li a.fa-google-plus:hover {
 
 /* Icons */
 .icon {
-  text-decoration: none;
   position: relative;
   text-decoration: none;
 }
+.icon.solid {
+  --fa-style-family: var(--fa-style-family-classic);
+  --fa-style: 900;
+}
+.icon.brands {
+  --fa-style-family: var(--fa-style-family-brands);
+  --fa-style: 400;
+}
 .icon:before {
+  font-family: var(--fa-style-family, "Font Awesome 6 Free");
+  font-weight: var(--fa-style, 900);
+  content: var(--fa);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  display: inline-block;
+  display: var(--fa-display, inline-block);
   font-style: normal;
   font-variant: normal;
-  text-rendering: auto;
   line-height: 1;
-  text-transform: none !important;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-}
-.icon.solid:before {
-  font-weight: 900;
-}
-.icon.brands:before {
-  font-family: "Font Awesome 5 Brands";
-}
-.icon:before {
-  line-height: inherit;
+  text-rendering: auto;
+  text-decoration: none;
 }
 .icon > .label {
   display: none;
@@ -2096,24 +2095,32 @@ relative-time:state(relative) {
     background: none;
   }
   #titleBar .toggle {
-    text-decoration: none;
+    --fa: "";
     width: 80px;
     height: 60px;
   }
-  #titleBar .toggle:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    text-transform: none !important;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+  #titleBar .toggle.solid {
+    --fa-style-family: var(--fa-style-family-classic);
+    --fa-style: 900;
+  }
+  #titleBar .toggle.brands {
+    --fa-style-family: var(--fa-style-family-brands);
+    --fa-style: 400;
   }
   #titleBar .toggle:before {
-    content: "\f0c9";
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+    content: var(--fa);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-decoration: none;
+  }
+  #titleBar .toggle:before {
     display: block;
     position: absolute;
     left: 10px;

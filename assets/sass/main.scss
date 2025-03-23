@@ -4,7 +4,6 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
-@import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic");
 
 /*
@@ -804,22 +803,6 @@
 		position: relative;
 		text-decoration: none;
 
-		&.solid {
-			&:before {
-				font-weight: 900;
-			}
-		}
-
-		&.brands {
-			&:before {
-				font-family: 'Font Awesome 5 Brands';
-			}
-		}
-
-		&:before {
-			line-height: inherit;
-		}
-
 		> .label {
 			display: none;
 		}
@@ -1391,12 +1374,12 @@
 				background: none;
 
 				.toggle {
-					@include icon(false, solid);
+					@include icon;
+					--fa: '\f0c9';
 					width: 80px;
 					height: 60px;
 
 					&:before {
-						content: '\f0c9';
 						display: block;
 						position: absolute;
 						left: 10px;
