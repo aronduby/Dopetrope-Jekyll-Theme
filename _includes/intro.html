@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             {% assign order = "first, middle, last" | split: ", " %}
-            {% for item in site.data.i18n.home.intro.items %}
+            {% for item in site.data.home.intro.items %}
                 <div class="col-4 col-12-medium">
                     <section class="{{ order[forloop.index0] }}">
                         <i class="icon solid featured {{ item.icon }} {{ item.iconVariant }}"></i>
@@ -16,7 +16,7 @@
         </div>
         <footer>
             <ul class="actions">
-                {% for action in site.data.i18n.home.intro.actions %}
+                {% for action in site.data.home.intro.actions %}
                     <li><a href="{{ action.href }}" class="button large {{ action.variant }}">{{ action.title }}</a></li>
                 {% endfor %}
             </ul>
