@@ -1,0 +1,7 @@
+<div id="copyright">
+    <ul class="links">
+        {% for item in site.data.footer.copyright.items %}
+            <li>{{ item | markdownify }}</li>
+        {% endfor %}
+    </ul>
+</div>
