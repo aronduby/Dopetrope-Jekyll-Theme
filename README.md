@@ -5,7 +5,7 @@ Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 ## Todo Next
 - Projects collection
 - Horizontal blog post option on the homepage to just show one
-- Sidebar content?
+- Sidebar content? Tied to the collection maybe?
 - CSS variables, at least for colors
 - Better fake images than the blurred
 - Rewrite this readme to add some more details about usage

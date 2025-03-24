@@ -19,7 +19,7 @@
         {% assign current = false %}
         {% if page.url == url %}
             {% assign current = true %}
-        {% elsif page.navKey and item.key and page.navKey == item.key %}
+        {% elsif page.section and item.section and page.section == item.section %}
             {% assign current = true %}
         {% endif %}
 

@@ -9,7 +9,7 @@
 #     starts with #   the current page (with site.baseUrl) with the jump
 #     starts with /   absolute path, no use of site.baseUrl
 #     else            adds the site.baseUrl
-#   key?: [optional] string key to identify this item, if the current page has a matching `navKey` variable it will
+#   section?: [optional] string key to identify this item, if the current page has a matching `section` variable it will
 #     display the nav item as current. Useful to associate collections with top level nav items (like blog posts) and
 #     setting that as a config default
 #   children?: [optional] list of child nav items for this item
@@ -54,12 +54,12 @@ items:
   -
     title: Left Sidebar
     url: left-sidebar.html
-    key: left-sidebar
+    section: left-sidebar
   -
     title: Right Sidebar
     url: right-sidebar.html
-    key: right-sidebar
+    section: right-sidebar
   -
     title: No Sidebar
     url: no-sidebar.html
-    key: no-sidebar
+    section: no-sidebar

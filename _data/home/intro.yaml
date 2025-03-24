@@ -1,0 +1,26 @@
+items:
+  -
+    title: Ipsum consequat
+    description: Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.
+    icon: fa-cog
+    iconVariant:
+  -
+    title: Magna etiam dolor
+    description: Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.
+    icon: fa-bolt
+    iconVariant: alt
+  -
+    title: Tempus adipiscing
+    description: Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.
+    icon: fa-star
+    iconVariant: alt2
+
+actions:
+  -
+    href: \#
+    variant:
+    title: Get Started
+  -
+    href: \#
+    variant: alt
+    title: Learn More
