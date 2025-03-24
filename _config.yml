@@ -15,6 +15,9 @@ baseUrl: /
 # specific, and wouldn't allow fallback to the layout or site. HOWEVER, _users of the theme_ are welcome to add their
 # own settings to the defaults.
 #
+# Most of these flows include a debug table to show the flow and the final result. Set this to true to display them.
+#
+debug: false
 
 #
 # Sidebar Variables
@@ -26,10 +29,17 @@ sidebar:
   file: "default"
 
 #
-# Most variable flows include a debug table to show the flow and the final result. Set this to true to display them.
+# Custom Collections
+# Used in the homepage collections sections
 #
-debug: false
+collections:
+    projects:
+      output: true
+      title: Projects
 
+#
+# Site defaults
+#
 defaults:
   -
     scope:
@@ -44,6 +54,13 @@ defaults:
     values:
       layout: "post"
       section: "right-sidebar"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      section: "left-sidebar"
 
 #
 # Don't track intellij editor stuff that changes every save

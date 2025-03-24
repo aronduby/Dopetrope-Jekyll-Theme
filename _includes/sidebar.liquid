@@ -1,10 +1,4 @@
-{% if page.sidebar.file %}
-    {% assign sidebarFile = page.sidebar.file %}
-{% elsif layout.sidebar.file %}
-    {% assign sidebarFile = layout.sidebar.file %}
-{% else %}
-    {% assign sidebarFile = site.sidebar.file %}
-{% endif %}
+{% assign sidebarFile = page.sidebar.field | default: layout.sidebar.file | default: site.sidebar.file %}
 
 {% if site.debug %}
     <table>

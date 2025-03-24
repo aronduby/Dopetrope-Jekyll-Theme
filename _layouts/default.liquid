@@ -2,13 +2,7 @@
 layout: base
 ---
 
-{% if page.sidebar.location %}
-    {% assign sidebarLocation = page.sidebar.location %}
-{% elsif layout.sidebar.location %}
-    {% assign sidebarLocation = layout.sidebar.location %}
-{% else %}
-    {% assign sidebarLocation = site.sidebar.location %}
-{% endif %}
+{% assign sidebarLocation = page.sidebar.location | default: layout.sidebar.location | default: site.sidebar.location %}
 
 {% if site.debug %}
     <table>

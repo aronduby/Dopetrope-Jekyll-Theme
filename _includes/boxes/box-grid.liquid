@@ -1,0 +1,56 @@
+{% comment %}
+    Variables for the grid
+        - collection: The name of the collection we're using
+        - limit: how many items to show, the supplied number should be:
+            - divisible by...
+                - 4
+                - 3
+            - 2
+            - 1
+        - title?: [optional] the title to use, will fallback to the collection if available
+{% endcomment %}
+
+{% assign collection = site[include.collection] %}
+{% assign title = include.title | default: collection.title %}
+
+{% assign mod3 = include.limit | modulo: 3 %}
+{% assign mod4 = include.limit | modulo: 4 %}
+{% assign col3class = "col-4 col-6-medium col-12-small" %}
+{% if include.limit == false or mod3 == 0 %}
+    {% assign class = col3class %}
+{% elsif mod4 == 0 %}
+    {% assign class = "col-3 col-6-medium col-12-small" %}
+{% elsif include.limit == 2 %}
+    {% assign class = "col-6 col-12-small" %}
+{% elsif include.limit == 1 %}
+    {% assign class = "col-12" %}
+{% else %}
+    {% assign class = col3class %}
+{% endif %}
+
+    <section>
+        <header class="major">
+            <h2>{{ title }}</h2>
+        </header>
+        <div class="row">
+
+            {% for item in collection %}
+                <div class="{{ class }}">
+                    <section class="box">
+                        <a href="{{ item.url }}" class="image featured"><img src="images/{{ item.featuredImage }}" alt="" /></a>
+                        <header>
+                            <h3>{{ item.title }}</h3>
+                        </header>
+
+                        <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+
+                        <footer>
+                            {% assign footerPath = "boxes/listings/footers/" | append: include.collection | append: ".liquid" %}
+                            {% include {{ footerPath }} index=forloop.index0 %}
+                        </footer>
+                    </section>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
