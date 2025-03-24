@@ -717,7 +717,7 @@
 		padding-left: 0;
 		overflow: hidden;
 		cursor: default;
-		margin: 0 0 3.25em 0;
+		margin: 0 0 2.5em 0;
 
 		li {
 			display: inline-block;
@@ -735,7 +735,12 @@
 				text-align: center;
 				border-radius: 5px;
 				background: #888;
-				@include vendor('transition', 'background-color .25s ease-in-out');
+				filter: brightness(1);
+				transition: filter .25s ease-in-out;
+
+				&:hover {
+					filter: brightness(1.2);
+				}
 
 				&:before {
 					color: #fff;
@@ -743,54 +748,50 @@
 					line-height: 1.5em;
 				}
 
-				&.fa-facebook,
-				&.fa-facebook-f {
-					background: #3c5a98;
-
-					&:hover {
-						background: #4c6aa8;
-					}
+				&.fa-bluesky {
+					background: #0085ff;
 				}
 
-				&.fa-twitter {
-					background: #2daae4;
-
-					&:hover {
-						background: #3dbaf4;
-					}
+				&.fa-discord {
+					background: #5865f2;
 				}
 
 				&.fa-dribbble {
 					background: #c4376b;
+				}
 
-					&:hover {
-						background: #d4477b;
-					}
+				&.fa-facebook,
+				&.fa-facebook-f {
+					background: #3c5a98;
+				}
+
+				&.fa-github {
+					background: #15191e;
+				}
+
+				&.fa-instagram {
+					background: #f05265;
 				}
 
 				&.fa-linkedin,
 				&.fa-linkedin-in {
 					background: #006599;
+				}
 
-					&:hover {
-						background: #1075a9;
-					}
+				&.fa-tiktok {
+					background: #121212;
 				}
 
 				&.fa-tumblr {
 					background: #2b4661;
-
-					&:hover {
-						background: #3b5671;
-					}
 				}
 
-				&.fa-google-plus {
-					background: #da2713;
+				&.fa-twitter {
+					background: #2daae4;
+				}
 
-					&:hover {
-						background: #ea3723;
-					}
+				&.fa-youtube {
+					background: #de2c2c;
 				}
 			}
 		}
@@ -1132,7 +1133,7 @@
 		}
 
 		header {
-			margin: 0 0 3em 0;
+			margin: 0 0 2.25em 0;
 
 			h2 {
 				font-size: 1.75em;

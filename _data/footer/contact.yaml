@@ -1,0 +1,37 @@
+header: Reach Out to Us
+
+social:
+  -
+    label: Facebook
+    icon: fa-facebook-f
+    url: '#'
+  -
+    label: Instagram
+    icon: fa-instagram
+    url: '#'
+  -
+    label: Bluesky
+    icon: fa-bluesky
+    url: '#'
+  -
+    label: LinkedIn
+    icon: fa-linkedin-in
+    url: '#'
+  -
+    label: GitHub
+    icon: fa-github
+    url: '#'
+
+methods:
+  -
+    label: Address
+    content: |-
+      Untitled Incorporated
+      1234 Somewhere Road Suite
+      Nashville, TN 00000-0000
+  -
+    label: Mail
+    content: <a href="mailto:someone@untitled.tld">someone@untitled.tld</a>
+  -
+    label: Phone
+    content: (800) 000-0000

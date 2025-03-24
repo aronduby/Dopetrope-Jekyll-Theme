@@ -1550,7 +1550,7 @@ ul.social {
   padding-left: 0;
   overflow: hidden;
   cursor: default;
-  margin: 0 0 3.25em 0;
+  margin: 0 0 2.5em 0;
 }
 ul.social li {
   display: inline-block;
@@ -1567,51 +1567,49 @@ ul.social li a {
   text-align: center;
   border-radius: 5px;
   background: #888;
-  -moz-transition: background-color .25s ease-in-out;
-  -webkit-transition: background-color .25s ease-in-out;
-  -ms-transition: background-color .25s ease-in-out;
-  transition: background-color .25s ease-in-out;
+  filter: brightness(1);
+  transition: filter 0.25s ease-in-out;
+}
+ul.social li a:hover {
+  filter: brightness(1.2);
 }
 ul.social li a:before {
   color: #fff;
   font-size: 2em;
   line-height: 1.5em;
 }
-ul.social li a.fa-facebook, ul.social li a.fa-facebook-f {
-  background: #3c5a98;
+ul.social li a.fa-bluesky {
+  background: #0085ff;
 }
-ul.social li a.fa-facebook:hover, ul.social li a.fa-facebook-f:hover {
-  background: #4c6aa8;
-}
-ul.social li a.fa-twitter {
-  background: #2daae4;
-}
-ul.social li a.fa-twitter:hover {
-  background: #3dbaf4;
+ul.social li a.fa-discord {
+  background: #5865f2;
 }
 ul.social li a.fa-dribbble {
   background: #c4376b;
 }
-ul.social li a.fa-dribbble:hover {
-  background: #d4477b;
+ul.social li a.fa-facebook, ul.social li a.fa-facebook-f {
+  background: #3c5a98;
+}
+ul.social li a.fa-github {
+  background: #15191e;
+}
+ul.social li a.fa-instagram {
+  background: #f05265;
 }
 ul.social li a.fa-linkedin, ul.social li a.fa-linkedin-in {
   background: #006599;
 }
-ul.social li a.fa-linkedin:hover, ul.social li a.fa-linkedin-in:hover {
-  background: #1075a9;
+ul.social li a.fa-tiktok {
+  background: #121212;
 }
 ul.social li a.fa-tumblr {
   background: #2b4661;
 }
-ul.social li a.fa-tumblr:hover {
-  background: #3b5671;
+ul.social li a.fa-twitter {
+  background: #2daae4;
 }
-ul.social li a.fa-google-plus {
-  background: #da2713;
-}
-ul.social li a.fa-google-plus:hover {
-  background: #ea3723;
+ul.social li a.fa-youtube {
+  background: #de2c2c;
 }
 
 /* Icons */
@@ -1915,7 +1913,7 @@ ul.social li a.fa-google-plus:hover {
   border-top-color: rgba(255, 255, 255, 0.05);
 }
 #footer header {
-  margin: 0 0 3em 0;
+  margin: 0 0 2.25em 0;
 }
 #footer header h2 {
   font-size: 1.75em;

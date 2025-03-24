@@ -1,0 +1,22 @@
+<section>
+    <header>
+        <h2>{{ site.data.footer.contact.header }}</h2>
+    </header>
+    <ul class="social">
+        {% for item in site.data.footer.contact.social %}
+            <li>
+                <a class="icon brands {{ item.icon }}" href="{{ item.url }}">
+                    <span class="label">{{ item.label }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <ul class="contact">
+        {% for item in site.data.footer.contact.methods %}
+            <li>
+                <h3>{{ item.label }}</h3>
+                <p>{{ item.content | newline_to_br }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
