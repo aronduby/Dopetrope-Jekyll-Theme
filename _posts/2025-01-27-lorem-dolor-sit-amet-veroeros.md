@@ -4,7 +4,7 @@ date: 2025-01-27 22:12:34 -0400
 featuredImage:  pic01.jpg
 ---
 
-Qui facer ex enim augue. Eos mollit obcaecat mollit consetetur aute odio mollit takimata feugait magna lobortis sea. 
+Qui facer **ex enim augue**. Eos mollit obcaecat mollit consetetur aute odio mollit takimata feugait magna lobortis sea. 
 Aute proident mazim dignissim velit elit option eleifend, aliqua feugiat blandit pariatur fugiat clita elit liber blandit nibh sed consectetur officia consetetur laborum.
 
 > Sit sint incidunt wisi. Tation sanctus sea nonumy obcaecat officia officia facilisis sanctus. Luptatum vulputate quod.

@@ -1,0 +1,32 @@
+<section>
+    <header>
+        <h2>{{ site.data.footer.about.header }}</h2>
+    </header>
+    {% if site.data.footer.about.image %}
+        {% if site.data.footer.about.image.url %}
+            <a href="#" class="image featured">
+        {% else %}
+            <div class="image featured">
+        {% endif %}
+
+            <img src="{{ site.data.footer.about.image.src }}" alt="{{ site.data.footer.about.image.alt }}" />
+
+        {% if site.data.footer.about.image.url %}
+            </a>
+        {% else %}
+            </div>
+        {% endif %}
+    {% endif %}
+
+    {{ site.data.footer.about.content | markdownify }}
+
+    {% if site.data.footer.about.action %}
+        <footer>
+            <ul class="actions">
+                <li>
+                    <a href="{{ site.data.footer.about.action.url }}" class="button">{{ site.data.footer.about.action.title }}</a>
+                </li>
+            </ul>
+        </footer>
+    {% endif %}
+</section>
