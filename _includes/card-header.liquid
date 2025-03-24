@@ -1,8 +1,8 @@
-{% if include.dateForSubtitle != nil %}
+{% if include.dateForSubtitle %}
     {% assign dateForSubtitle = include.dateForSubtitle %}
-{% elsif  page.dateForSubtitle != nil %}
+{% elsif  page.dateForSubtitle %}
     {% assign dateForSubtitle = page.dateForSubtitle %}
-{% elsif layout.dateForSubtitle != nil %}
+{% elsif layout.dateForSubtitle %}
     {% assign dateForSubtitle = layout.dateForSubtitle %}
 {% else %}
     {% assign dateForSubtitle = false %}
@@ -15,9 +15,9 @@
 
 <header>
     <h1>{{ page.title }}</h1>
-    {%if dateForSubtitle == true && page.date %}
+    {%if dateForSubtitle == true and page.date %}
         <p>posted <relative-time datetime="{{ page.date }}"></relative-time></p>
-    {% elsif page.subtitle && page.subtitle != '' %}
+    {% elsif page.subtitle and page.subtitle != '' %}
         <p>{{ page.subtitle }}</p>
     {% endif %}
 </header>

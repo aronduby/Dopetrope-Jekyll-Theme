@@ -1,0 +1,16 @@
+{% assign data = site.data.footer.links[include.key] %}
+
+<section>
+    <header>
+        <h2>{{ data.header }}</h2>
+    </header>
+    <ul class="divided">
+        {% for link in data.links %}
+            <li>
+                <a href="{{ link.url }}">
+                    {{ link.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
