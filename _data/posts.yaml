@@ -1,0 +1,10 @@
+listings:
+  actions:
+    permalink:
+      title: Continue Reading
+      icon: solid fa-file-alt
+    secondary:
+      title: 33 Comments
+      icon: solid fa-comment
+
+comments: Comments

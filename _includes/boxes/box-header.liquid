@@ -1,15 +1,39 @@
-{%if page.featuredImage %}
-    <div class="image featured"><img src="images/{{ page.featuredImage }}" alt="" /></div>
+{% comment %}
+Variables:
+    featuredImage?: [optional] string image path - relative to the images folder - for the featured image, default no image
+    title: string title for the box
+    dateForSubtitle?: [optional] boolean if the subtitle should be the date, default false
+    date?: [optional, unless if you supplied dateForSubtitle] date for the item
+    subtitle?: [optional] string for the subtitle
+    url?: [optional] string for the url, if set the featured image is a link
+    headingLevel?: [optional] 1-6, default 1
+{% endcomment %}
+{% assign headingLevel = include.headingLevel | default: 1 %}
+{% assign heading = "h" | append: headingLevel %}
+
+{%if include.featuredImage %}
+    {% capture img %}
+        <img src="images/{{ include.featuredImage }}" alt="" />
+    {% endcapture %}
+    {% if include.url %}
+        <a href="{{ include.url }}" class="image featured">
+            {{ img }}
+        </a>
+    {% else %}
+        <div class="image featured">
+            {{ img }}
+        </div>
+    {% endif %}
 {% endif %}
 
 <header>
-    <h1>{{ page.title }}</h1>
+    <{{ heading }}>{{ include.title }}</{{ heading }}>
 
     {% assign dateForSubtitle = include.dateForSubtitle | default: page.dateForSubtitle | default: layout.dateForSubtitle | default: false %}
-    {%if dateForSubtitle == true and page.date %}
-        <p>posted <relative-time datetime="{{ page.date }}"></relative-time></p>
-    {% elsif page.subtitle and page.subtitle != '' %}
-        <p>{{ page.subtitle }}</p>
+    {%if dateForSubtitle == true and include.date %}
+        <p>posted <relative-time datetime="{{ include.date }}"></relative-time></p>
+    {% elsif include.subtitle and include.subtitle != '' %}
+        <p>{{ include.subtitle }}</p>
     {% endif %}
 </header>
 

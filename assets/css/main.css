@@ -1275,10 +1275,9 @@ footer {
   font-size: 2.5em;
   letter-spacing: -0.015em;
   padding: 0;
-  margin: 0;
+  margin: -0.75em 0 0;
 }
 .box.post > header p {
-  margin-top: 1.25em;
   font-size: 1.25em;
 }
 .box.post h1, .box.post h2, .box.post h3, .box.post h4, .box.post h5, .box.post h6 {
@@ -1291,6 +1290,48 @@ footer {
 }
 .box footer ul.actions {
   margin-bottom: 0;
+}
+@media screen and (min-width: 737px) {
+  .box.horizontal, .box-grid > .row > .col-12 > .box {
+    position: relative;
+    padding: 1.75em;
+    padding-left: calc(33% + 1.75em);
+  }
+  .box.horizontal header, .box-grid > .row > .col-12 > .box header {
+    margin-bottom: 0.5em;
+  }
+  .box.horizontal header h3, .box-grid > .row > .col-12 > .box header h3 {
+    font-size: 1.7em;
+    letter-spacing: -0.02em;
+  }
+  .box.horizontal header p, .box-grid > .row > .col-12 > .box header p {
+    margin-top: 0;
+  }
+  .box.horizontal .image.featured, .box-grid > .row > .col-12 > .box .image.featured {
+    position: absolute;
+    inset: 0;
+    right: auto;
+    width: 33%;
+    margin: 0;
+  }
+  .box.horizontal .image.featured img, .box-grid > .row > .col-12 > .box .image.featured img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 0;
+    max-height: unset;
+  }
+  .box.horizontal footer, .box-grid > .row > .col-12 > .box footer {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 981px) {
+  .box-grid > .row > .col-3 > .box ul.actions li {
+    margin: 1em 0 0 0;
+    display: block;
+  }
+  .box-grid > .row > .col-3 > .box ul.actions li .button {
+    width: 100%;
+  }
 }
 
 /* Button */
@@ -1939,6 +1980,11 @@ ul.social li a.fa-youtube {
 relative-time:state(relative) {
   cursor: help;
   text-decoration: underline dotted 0.08em rgba(0, 0, 0, 0.3);
+}
+
+/* Comments */
+#comments:empty {
+  display: none;
 }
 
 /* Large */

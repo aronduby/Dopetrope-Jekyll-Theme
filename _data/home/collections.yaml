@@ -1,0 +1,13 @@
+-
+  collection: projects
+  title: My Portfolio
+  limit: 3
+-
+  collection: posts
+  title: The Blog
+  limit: 2
+-
+  collection: posts
+  title: Horizontal Single Blog
+  limit: 1
+  offset: 2

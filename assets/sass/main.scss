@@ -419,11 +419,11 @@
 					font-size: 2.5em;
 					letter-spacing: -0.015em;
 					padding: 0;
-					margin: 0;
+					// top offset for the page version
+					margin: -.75em 0 0;
 				}
 
 				p {
-					margin-top: 1.25em;
 					font-size: 1.25em;
 				}
 			}
@@ -442,6 +442,64 @@
 		footer {
 			ul.actions {
 				margin-bottom: 0;
+			}
+		}
+
+		// Horizontal on bigger screens
+		@include breakpoint('>small') {
+			&.horizontal,
+			.box-grid > .row > .col-12 > & {
+				position: relative;
+				padding: 1.75em;
+				padding-left: calc(33% + 1.75em);
+
+				header {
+					margin-bottom: .5em;
+
+					h3 {
+						font-size: 1.7em;
+						letter-spacing: -.02em;
+					}
+
+					p {
+						margin-top: 0;
+					}
+				}
+
+				.image.featured {
+					position: absolute;
+					inset: 0;
+					right: auto;
+					width: 33%;
+					margin: 0;
+
+					img {
+						width: 100%;
+						height: 100%;
+						aspect-ratio: 0;
+						max-height: unset;
+					}
+				}
+
+				footer {
+					text-align: right;
+				}
+			}
+		}
+
+		// block actions on larger screens when the columns are small
+		@include breakpoint('>medium') {
+			.box-grid > .row > .col-3 > & {
+				ul.actions {
+					li {
+						margin: 1em 0 0 0;
+						display: block;
+
+						.button {
+							width: 100%;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1164,6 +1222,11 @@
 	relative-time:state(relative) {
 		cursor: help;
 		text-decoration: underline dotted .08em rgba(0,0,0,.3);
+	}
+
+/* Comments */
+	#comments:empty {
+		display: none;
 	}
 
 /* Large */

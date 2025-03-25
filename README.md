@@ -3,8 +3,12 @@
 Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 
 ## Todo Next
-- Projects collection
-- Horizontal blog post option on the homepage to just show one
+- Box Grid Tweaks
+  - separate limit from columns
+  - horizontal box grid gets zebra image placement
+    - maybe opt-in
+    - maybe not at all if it sucks
+- Make scratch only show when dev-ing locally
 - Sidebar content? Tied to the collection maybe?
 - CSS variables, at least for colors
 - Better fake images than the blurred

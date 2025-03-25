@@ -1,17 +1,18 @@
 {% comment %}
     Variables for the grid
-        - collection: The name of the collection we're using
+        - collection: The label for the collection we're using
         - limit: how many items to show, the supplied number should be:
             - divisible by...
                 - 4
                 - 3
             - 2
             - 1
+        - offset?: [optional] how many items to offset, or continue
         - title?: [optional] the title to use, will fallback to the collection if available
 {% endcomment %}
-
 {% assign collection = site[include.collection] %}
-{% assign title = include.title | default: collection.title %}
+{% assign collectionMeta = site.collections | where: "label", include.collection | first %}
+{% assign title = include.title | default: collectionMeta.title %}
 
 {% assign mod3 = include.limit | modulo: 3 %}
 {% assign mod4 = include.limit | modulo: 4 %}
@@ -28,25 +29,29 @@
     {% assign class = col3class %}
 {% endif %}
 
-    <section>
+    <section class="box-grid">
         <header class="major">
             <h2>{{ title }}</h2>
         </header>
         <div class="row">
 
-            {% for item in collection %}
+            {% for item in collection limit: include.limit offset: item.offset %}
                 <div class="{{ class }}">
                     <section class="box">
-                        <a href="{{ item.url }}" class="image featured"><img src="images/{{ item.featuredImage }}" alt="" /></a>
-                        <header>
-                            <h3>{{ item.title }}</h3>
-                        </header>
+                        {% include boxes/box-header.liquid
+                            featuredImage = item.featuredImage
+                            title = item.title
+                            dateForSubtitle = item.dateForSubtitle
+                            date = item.date
+                            url = item.url
+                            headingLevel = 3
+                        %}
 
                         <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
 
                         <footer>
-                            {% assign footerPath = "boxes/listings/footers/" | append: include.collection | append: ".liquid" %}
-                            {% include {{ footerPath }} index=forloop.index0 %}
+                            {% assign footerPath = "boxes/listings/actions/" | append: include.collection | append: ".liquid" %}
+                            {% include {{ footerPath }} collection=include.collection index=forloop.index0 %}
                         </footer>
                     </section>
                 </div>

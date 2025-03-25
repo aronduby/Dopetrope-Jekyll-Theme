@@ -1,0 +1,8 @@
+{% assign post = site[include.collection][include.index] %}
+
+<ul class="actions">
+    <li><a href="{{ post.url }}" class="button icon {{ site.data.posts.listings.actions.permalink.icon }}">{{ site.data.posts.listings.actions.permalink.title }}</a></li>
+    {% if post.comments %}
+        <li><a href="{{ post.url }}#comments" class="button alt icon {{ site.data.posts.listings.actions.secondary.icon }}">{{ site.data.posts.listings.actions.secondary.title }}</a></li>
+    {% endif %}
+</ul>

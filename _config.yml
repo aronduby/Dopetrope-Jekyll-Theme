@@ -30,12 +30,19 @@ sidebar:
 
 #
 # Custom Collections
-# Used in the homepage collections sections
 #
 collections:
-    projects:
-      output: true
-      title: Projects
+  projects:
+    output: true
+    title: Projects
+
+#
+# Globally enable/disable comments
+# This is the global override, so if this is false what you do in the collections won't matter.
+# If you want comments you still need to pick a provider and add the embed code in the includes/comments.liquid file
+# and then probably make sure the comments variable is set in the defaults, or the front matter
+#
+comments: true
 
 #
 # Site defaults
@@ -54,6 +61,8 @@ defaults:
     values:
       layout: "post"
       section: "right-sidebar"
+      dateForSubtitle: true
+      comments: true
   -
     scope:
       path: ""
@@ -61,6 +70,7 @@ defaults:
     values:
       layout: "project"
       section: "left-sidebar"
+      comments: false
 
 #
 # Don't track intellij editor stuff that changes every save

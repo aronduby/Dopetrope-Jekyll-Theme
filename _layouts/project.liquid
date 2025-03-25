@@ -6,8 +6,18 @@ sidebar:
 ---
 
     <article class="box post">
-        {% include boxes/box-header.liquid %}
+        {% include boxes/box-header.liquid
+            featuredImage = page.featuredImage
+            title = page.title
+            subtitle = page.subtitle
+            date = page.date
+            url = page.url
+        %}
 
         {{ content }}
 
     </article>
+
+    {% if site.comments and page.comments %}
+        {% include comments.liquid %}
+    {% endif %}
