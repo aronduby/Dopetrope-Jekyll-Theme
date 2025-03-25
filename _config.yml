@@ -34,7 +34,6 @@ sidebar:
 collections:
   projects:
     output: true
-    title: Projects
 
 #
 # Globally enable/disable comments

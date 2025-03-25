@@ -1301,7 +1301,7 @@ footer {
     margin-bottom: 0.5em;
   }
   .box.horizontal header h3, .box-grid > .row > .col-12 > .box header h3 {
-    font-size: 1.7em;
+    font-size: 1.5em;
     letter-spacing: -0.02em;
   }
   .box.horizontal header p, .box-grid > .row > .col-12 > .box header p {
@@ -1323,6 +1323,17 @@ footer {
   .box.horizontal footer, .box-grid > .row > .col-12 > .box footer {
     text-align: right;
   }
+  .box.horizontal:nth-child(even), .box.horizontal.right, .box-grid > .row > .col-12:nth-child(even) > .box {
+    padding-right: calc(33% + 1.75em);
+    padding-left: 1.75em;
+  }
+  .box.horizontal:nth-child(even) .image.featured, .box.horizontal.right .image.featured, .box-grid > .row > .col-12:nth-child(even) > .box .image.featured {
+    right: 0;
+    left: auto;
+  }
+  .box.horizontal:nth-child(even) footer, .box.horizontal.right footer, .box-grid > .row > .col-12:nth-child(even) > .box footer {
+    text-align: left;
+  }
 }
 @media screen and (min-width: 981px) {
   .box-grid > .row > .col-3 > .box ul.actions li {
@@ -1332,6 +1343,13 @@ footer {
   .box-grid > .row > .col-3 > .box ul.actions li .button {
     width: 100%;
   }
+}
+
+.box-grid .box > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Button */

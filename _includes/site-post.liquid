@@ -9,6 +9,8 @@
     <script src="assets/js/relative-time.element.js" type="module"></script>
     <script src="assets/js/main.js"></script>
 
-    <link rel="stylesheet" href="assets/css/scratch.css" />
+    {% if jekyll.environment == "development" %}
+        <link rel="stylesheet" href="assets/css/scratch.css" />
+    {% endif %}
 </body>
 </html>

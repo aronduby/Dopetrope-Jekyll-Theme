@@ -1,4 +1,5 @@
-listings:
+listing:
+  empty: sorry, we couldn't find any posts yet, but be sure to check back soon
   actions:
     permalink:
       title: Continue Reading

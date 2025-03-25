@@ -14,10 +14,12 @@ layout: base
 				<div class="col-12">
 
 					{% include boxes/box-grid.liquid
-						collection=item.collection
-						title=item.title
-						limit=item.limit
-						offset=item.offset
+						collection = item.collection
+						title = item.title
+						columns = item.columns
+						limit = item.limit
+						offset = item.offset
+						suppressEmpty = item.suppressEmpty
 					%}
 
 				</div>

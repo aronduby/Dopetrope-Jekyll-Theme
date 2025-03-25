@@ -1,41 +1,40 @@
 {% comment %}
     Variables for the grid
         - collection: The label for the collection we're using
-        - limit: how many items to show, the supplied number should be:
-            - divisible by...
-                - 4
-                - 3
-            - 2
-            - 1
+        - limit: how many items to show, preferrably this is evenly divisible by the columns
+        - columns?: [optional] how many columns to split into, max of 4, although 3 is recommended. If a limit is supplied
+            and that limit is less than 4, it will be used as the columns, otherwise the fallback is 3
         - offset?: [optional] how many items to offset, or continue
         - title?: [optional] the title to use, will fallback to the collection if available
+        - suppressEmpty?: [optional] by default if there are no items it will show site.data[collection].listing.empty,
+            set this as true to not show the empty message. Useful if you are chaining multiple grids together, but might
+            not have enough content yet.
 {% endcomment %}
 {% assign collection = site[include.collection] %}
-{% assign collectionMeta = site.collections | where: "label", include.collection | first %}
-{% assign title = include.title | default: collectionMeta.title %}
+{% assign collectionData = site.data[include.collection] %}
+{% assign title = include.title | default: false %}
+{% assign columns = include.columns | default: include.limit | default: 3 | at_most: 4 %}
 
-{% assign mod3 = include.limit | modulo: 3 %}
-{% assign mod4 = include.limit | modulo: 4 %}
-{% assign col3class = "col-4 col-6-medium col-12-small" %}
-{% if include.limit == false or mod3 == 0 %}
-    {% assign class = col3class %}
-{% elsif mod4 == 0 %}
-    {% assign class = "col-3 col-6-medium col-12-small" %}
-{% elsif include.limit == 2 %}
-    {% assign class = "col-6 col-12-small" %}
-{% elsif include.limit == 1 %}
-    {% assign class = "col-12" %}
-{% else %}
-    {% assign class = col3class %}
-{% endif %}
+{% case columns %}
+    {% when 4 %}
+        {% assign class = "col-3 col-6-medium col-12-small" %}
+    {% when 3 %}
+        {% assign class = "col-4 col-6-medium col-12-small" %}
+    {% when 2 %}
+        {% assign class = "col-6 col-12-small" %}
+    {% when 1 %}
+        {% assign class = "col-12" %}
+{% endcase %}
 
     <section class="box-grid">
-        <header class="major">
-            <h2>{{ title }}</h2>
-        </header>
+        {% if title %}
+            <header class="major">
+                <h2>{{ title }}</h2>
+            </header>
+        {% endif %}
         <div class="row">
 
-            {% for item in collection limit: include.limit offset: item.offset %}
+            {% for item in collection limit: include.limit offset: include.offset %}
                 <div class="{{ class }}">
                     <section class="box">
                         {% include boxes/box-header.liquid
@@ -47,7 +46,7 @@
                             headingLevel = 3
                         %}
 
-                        <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+                        <p>{{ item.excerpt | strip_html | strip_newlines | truncate: 350 }}</p>
 
                         <footer>
                             {% assign footerPath = "boxes/listings/actions/" | append: include.collection | append: ".liquid" %}
@@ -55,6 +54,14 @@
                         </footer>
                     </section>
                 </div>
+            {% else %}
+                {% if include.suppressEmpty != true %}
+                    <div class="col-12">
+                        <div class="row aln-center">
+                            <p>{{ collectionData.listing.empty }}</p>
+                        </div>
+                    </div>
+                {% endif %}
             {% endfor %}
 
         </div>

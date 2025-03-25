@@ -457,7 +457,7 @@
 					margin-bottom: .5em;
 
 					h3 {
-						font-size: 1.7em;
+						font-size: 1.5em;
 						letter-spacing: -.02em;
 					}
 
@@ -485,6 +485,23 @@
 					text-align: right;
 				}
 			}
+
+			// every other to the right
+			&.horizontal:nth-child(even),
+			&.horizontal.right,
+			.box-grid > .row > .col-12:nth-child(even) > & {
+				padding-right: calc(33% + 1.75em);
+				padding-left: 1.75em;
+
+				.image.featured {
+					right: 0;
+					left: auto;
+				}
+
+				footer {
+					text-align: left;
+				}
+			}
 		}
 
 		// block actions on larger screens when the columns are small
@@ -501,6 +518,12 @@
 					}
 				}
 			}
+		}
+	}
+
+	.box-grid {
+		.box > p {
+			@include line-clamp(3);
 		}
 	}
 
@@ -733,10 +756,7 @@
 
 		p {
 			margin: 0;
-			display: -webkit-box;
-			-webkit-line-clamp: 1;
-			-webkit-box-orient: vertical;
-			overflow: hidden;
+			@include line-clamp(1);
 		}
 
 		li {
