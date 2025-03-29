@@ -1,10 +1,17 @@
 title: Dopetrope
 description: Dopetrope template for Jekyll
 baseUrl: /
+
+#
+# Blog Pagination
+# There are 2 predefined index files for paginating the blog posts, `grid` and `horizontal`, with `horizontal` being the
+# default. To switch between them just copy the one you want and make it the index.
+#
+# Horizontal does the full width post, with images on opposite sides.
+# Grid is the 2-up grid. If you switch to grid make sure you have paginate set to a multiple of 2
+#
 paginate: 4
 paginate_path: "/blog/page:num/"
-feed:
-  disable_in_development: true
 
 #
 # Variable Flows
@@ -73,6 +80,12 @@ defaults:
       layout: "project"
       section: "left-sidebar"
       comments: false
+
+#
+# Save some resources in dev by not building the xml feeds
+#
+feed:
+  disable_in_development: true
 
 #
 # Don't track intellij editor stuff that changes every save
