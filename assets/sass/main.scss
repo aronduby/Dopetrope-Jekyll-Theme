@@ -569,13 +569,28 @@
 			}
 		}
 
-		&.icon {
-			&:before {
-				opacity: 0.35;
-				position: relative;
-				top: 0.05em;
-				margin-right: 0.75em;
+		&.alt2 {
+			background: #827a7c;
+
+			&:hover {
+				background: #908c8d;
 			}
+
+			&:active {
+				background: #75676b;
+			}
+		}
+
+		&.icon-after {
+			@include icon(after);
+		}
+
+		&.icon:before,
+		&.icon-after:after {
+			opacity: 0.35;
+			position: relative;
+			top: 0.05em;
+			margin-right: 0.75em;
 		}
 
 		&.large {
@@ -1226,7 +1241,6 @@
 
 		ul.links {
 			display: inline-block;
-			background: #2C2929;
 			background: rgba(255, 255, 255, 0.05);
 			border-radius: 5px;
 			margin: 0;
@@ -1787,3 +1801,6 @@
 			}
 
 	}
+
+/* New Imports */
+	@import "pagination";

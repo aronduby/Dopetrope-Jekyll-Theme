@@ -1,7 +1,10 @@
 title: Dopetrope
 description: Dopetrope template for Jekyll
-paginate: 10
 baseUrl: /
+paginate: 4
+paginate_path: "/blog/page:num/"
+feed:
+  disable_in_development: true
 
 #
 # Variable Flows
@@ -76,3 +79,4 @@ defaults:
 #
 exclude:
   - ".idea/"
+  - "_assets/"
