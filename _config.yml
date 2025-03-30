@@ -3,6 +3,14 @@ description: Dopetrope template for Jekyll
 baseUrl: /
 
 #
+# Body Classes
+# Certain optional styles allow you to opt-in easily by applying body classes, add/remove them here
+# Or just add whatever custom classes you want as well
+#
+bodyClasses:
+  - bubbleButtons
+
+#
 # Blog Pagination
 # There are 2 predefined index files for paginating the blog posts, `grid` and `horizontal`, with `horizontal` being the
 # default. To switch between them just copy the one you want and make it the index.

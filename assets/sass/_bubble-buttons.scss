@@ -1,0 +1,100 @@
+///
+/// Note on markup: this uses pseudo elements so you have to be intentional in combining this with elements that use
+/// that as well, this includes .icon and .icon-after in buttons. The easiest way to address this is to wrap your content
+/// in 2 span tags, the first gets the background and the second gets the z-indexing to get above the background. If you
+/// aren't using pseudo elements you likely will still need 1 span for the proper layering.
+///
+@use "sass:selector";
+@import "libs/mixins";
+
+// opt-in with the bubbleButtons class on the body
+body.bubbleButtons {
+
+    $_buttons: "input[type="button"], input[type="submit"], input[type="reset"], button, .button";
+
+    .bubbleButton,
+    #{$_buttons},
+    .pagination a,
+    #nav > ul > li > a,
+    .social a {
+        --bubble-bg-scale: 0;
+        --bubble-bg: rgb(0 0 0 / 15%);
+        position: relative;
+        overflow: hidden;
+        transition: all .3s ease-in;
+
+        &:hover {
+            --bubble-bg-scale: 250%
+        }
+    }
+
+    .bubbleButton .bubbleButton-background,
+    #{selector.nest($_buttons, '> span::before')},
+    .pagination a::before,
+    #nav > ul > li > a::before,
+    .social a::after {
+        content: ' ';
+        background: var(--bubble-bg);
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        translate: 50% 50%;
+        scale: var(--bubble-bg-scale, 0);
+        z-index: 1;
+        transition: all .3s ease-in;
+    }
+
+    .bubbleButton .bubbleButton-content,
+    #{selector.nest($_buttons, '> span > span')},
+    .pagination a span,
+    #nav > ul > li > a > span,
+    .social a::before {
+        position: relative;
+        z-index: 2;
+    }
+
+    //
+    // Groups that move the location of the bubble
+    //
+    .buttonButton-group .bubbleButton:first-child .bubbleButton-background,
+    .pagination li:first-child a::before,
+    #nav > ul > li:first-child > a::before,
+    .actions li:first-child a.button span::before {
+        right: 0;
+    }
+
+    .buttonButton-group .bubbleButton:last-child .bubbleButton-background,
+    .pagination li:last-child a::before,
+    #nav > ul > li:last-child > a::before,
+    .actions li:last-child a.button span::before {
+        right: 100%;
+    }
+
+    .buttonButton-group .bubbleButton:first-child:last-child .bubbleButton-background,
+    .pagination li:first-child:last-child a::before,
+    #nav > ul > li:first-child:last-child a::before,
+    .actions li:first-child:last-child a.button span::before {
+        right: 50%;
+    }
+
+
+    //
+    // Specific Overrides
+    //
+    .pagination a {
+        --bubble-bg: #d52349;
+
+        &:hover {
+            color: #f8f8f8 !important;
+        }
+    }
+
+    #{selector.append($_buttons, '.alt, .alt2')},
+    .social a{
+        --bubble-bg: rgb(255 255 255 / 6%);
+    }
+
+}

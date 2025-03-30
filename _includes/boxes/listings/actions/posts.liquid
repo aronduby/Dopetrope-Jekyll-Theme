@@ -1,8 +1,16 @@
 {% assign post = site[include.collection][include.index] %}
 
 <ul class="actions">
-    <li><a href="{{ post.url }}" class="button icon {{ site.data.posts.listing.actions.permalink.icon }}">{{ site.data.posts.listing.actions.permalink.title }}</a></li>
+    <li>
+        <a href="{{ post.url }}" class="button icon {{ site.data.posts.listing.actions.permalink.icon }}">
+            <span><span>{{ site.data.posts.listing.actions.permalink.title }}</span></span>
+        </a>
+    </li>
     {% if post.comments %}
-        <li><a href="{{ post.url }}#comments" class="button alt icon {{ site.data.posts.listing.actions.secondary.icon }}">{{ site.data.posts.listing.actions.secondary.title }}</a></li>
+        <li>
+            <a href="{{ post.url }}#comments" class="button alt icon {{ site.data.posts.listing.actions.secondary.icon }}">
+                <span><span>{{ site.data.posts.listing.actions.secondary.title }}</span></span>
+            </a>
+        </li>
     {% endif %}
 </ul>

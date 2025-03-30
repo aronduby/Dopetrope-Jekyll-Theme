@@ -1,5 +1,9 @@
 {% assign project = site[include.collection][include.index] %}
 
 <ul class="actions">
-    <li><a href="{{ project.url }}" class="button alt">{{ site.data.projects.listing.actions.permalink }}</a></li>
+    <li>
+        <a href="{{ project.url }}" class="button alt">
+            <span><span>{{ site.data.projects.listing.actions.permalink }}</span></span>
+        </a>
+    </li>
 </ul>

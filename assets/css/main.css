@@ -168,10 +168,11 @@ h6 {
 
 a {
   color: #d52349;
-  text-decoration: underline;
+  text-decoration: solid underline;
+  transition: all 0.2s ease-in;
 }
 a:hover {
-  text-decoration: none;
+  text-decoration-color: transparent;
 }
 
 br.clear {
@@ -1818,29 +1819,30 @@ ul.social li a.fa-youtube {
 
 /* Nav */
 #nav {
-  margin: 2.5em 0 0 0;
+  margin: 2em 0 0 0;
 }
 #nav > ul {
   margin: 0;
+  line-height: 0;
 }
 #nav > ul > li {
   display: inline-block;
   font-style: italic;
   margin: 0 0.35em 0 0.35em;
+  padding: 0;
 }
 #nav > ul > li > ul {
   display: none;
 }
 #nav > ul > li > a {
-  border-radius: 5px;
+  display: inline-block;
   color: #5d5d5d;
+  line-height: 1.3em;
   text-decoration: none;
   padding: 0.6em 1.2em 0.6em 1.2em;
-  -moz-transition: background-color .25s ease-in-out;
-  -webkit-transition: background-color .25s ease-in-out;
-  -ms-transition: background-color .25s ease-in-out;
-  transition: background-color .25s ease-in-out;
+  border-radius: 5px;
   outline: 0;
+  transition: background-color 0.2s ease-in;
 }
 #nav > ul > li:hover > a, #nav > ul > li.active > a {
   background: #f3f3f3;
@@ -2023,6 +2025,13 @@ ul.social li a.fa-youtube {
 }
 #footer h2 a, #footer h3 a, #footer h4 a, #footer h5 a, #footer h6 a {
   color: inherit;
+  text-decoration: underline transparent;
+  transition: text-decoration 0.2s ease-in;
+}
+#footer h2 a:hover, #footer h3 a:hover, #footer h4 a:hover, #footer h5 a:hover, #footer h6 a:hover {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 #footer ul.contact li, #footer ul.dates li, #footer ul.divided li {
   border-top-color: #353434;
@@ -2511,7 +2520,7 @@ relative-time:state(relative) {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
   min-width: 2.5em;
   padding: 0.5em;
   border-radius: 5px;
@@ -2552,6 +2561,79 @@ relative-time:state(relative) {
 }
 .pagination li:first-child a[href]:hover i, .pagination li:first-child span[href]:hover i {
   transform: translateX(-10px);
+}
+
+body.bubbleButtons .bubbleButton,
+body.bubbleButtons input[type=button], body.bubbleButtons input[type=submit], body.bubbleButtons input[type=reset], body.bubbleButtons button, body.bubbleButtons .button,
+body.bubbleButtons .pagination a,
+body.bubbleButtons #nav > ul > li > a,
+body.bubbleButtons .social a {
+  --bubble-bg-scale: 0;
+  --bubble-bg: rgb(0 0 0 / 15%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+}
+body.bubbleButtons .bubbleButton:hover,
+body.bubbleButtons input[type=button]:hover, body.bubbleButtons input[type=submit]:hover, body.bubbleButtons input[type=reset]:hover, body.bubbleButtons button:hover, body.bubbleButtons .button:hover,
+body.bubbleButtons .pagination a:hover,
+body.bubbleButtons #nav > ul > li > a:hover,
+body.bubbleButtons .social a:hover {
+  --bubble-bg-scale: 250% ;
+}
+body.bubbleButtons .bubbleButton .bubbleButton-background,
+body.bubbleButtons input[type=button] > span::before, body.bubbleButtons input[type=submit] > span::before, body.bubbleButtons input[type=reset] > span::before, body.bubbleButtons button > span::before, body.bubbleButtons .button > span::before,
+body.bubbleButtons .pagination a::before,
+body.bubbleButtons #nav > ul > li > a::before,
+body.bubbleButtons .social a::after {
+  content: " ";
+  background: var(--bubble-bg);
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  translate: 50% 50%;
+  scale: var(--bubble-bg-scale, 0);
+  z-index: 1;
+  transition: all 0.3s ease-in;
+}
+body.bubbleButtons .bubbleButton .bubbleButton-content,
+body.bubbleButtons input[type=button] > span > span, body.bubbleButtons input[type=submit] > span > span, body.bubbleButtons input[type=reset] > span > span, body.bubbleButtons button > span > span, body.bubbleButtons .button > span > span,
+body.bubbleButtons .pagination a span,
+body.bubbleButtons #nav > ul > li > a > span,
+body.bubbleButtons .social a::before {
+  position: relative;
+  z-index: 2;
+}
+body.bubbleButtons .buttonButton-group .bubbleButton:first-child .bubbleButton-background,
+body.bubbleButtons .pagination li:first-child a::before,
+body.bubbleButtons #nav > ul > li:first-child > a::before,
+body.bubbleButtons .actions li:first-child a.button span::before {
+  right: 0;
+}
+body.bubbleButtons .buttonButton-group .bubbleButton:last-child .bubbleButton-background,
+body.bubbleButtons .pagination li:last-child a::before,
+body.bubbleButtons #nav > ul > li:last-child > a::before,
+body.bubbleButtons .actions li:last-child a.button span::before {
+  right: 100%;
+}
+body.bubbleButtons .buttonButton-group .bubbleButton:first-child:last-child .bubbleButton-background,
+body.bubbleButtons .pagination li:first-child:last-child a::before,
+body.bubbleButtons #nav > ul > li:first-child:last-child a::before,
+body.bubbleButtons .actions li:first-child:last-child a.button span::before {
+  right: 50%;
+}
+body.bubbleButtons .pagination a {
+  --bubble-bg: #d52349;
+}
+body.bubbleButtons .pagination a:hover {
+  color: #f8f8f8 !important;
+}
+body.bubbleButtons input[type=button].alt, body.bubbleButtons input[type=button].alt2, body.bubbleButtons input[type=submit].alt, body.bubbleButtons input[type=submit].alt2, body.bubbleButtons input[type=reset].alt, body.bubbleButtons input[type=reset].alt2, body.bubbleButtons button.alt, body.bubbleButtons button.alt2, body.bubbleButtons .button.alt, body.bubbleButtons .button.alt2,
+body.bubbleButtons .social a {
+  --bubble-bg: rgb(255 255 255 / 6%);
 }
 
 /*# sourceMappingURL=main.css.map */

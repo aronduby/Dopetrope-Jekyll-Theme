@@ -17,7 +17,11 @@
         <footer>
             <ul class="actions">
                 {% for action in site.data.home.intro.actions %}
-                    <li><a href="{{ action.href }}" class="button large {{ action.variant }}">{{ action.title }}</a></li>
+                    <li>
+                        <a href="{{ action.href }}" class="button large {{ action.variant }}">
+                            <span><span>{{ action.title }}</span></span>
+                        </a>
+                    </li>
                 {% endfor %}
             </ul>
         </footer>

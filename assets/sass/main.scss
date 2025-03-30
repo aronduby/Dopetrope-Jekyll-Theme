@@ -191,10 +191,11 @@
 
 	a {
 		color: #d52349;
-		text-decoration: underline;
+		text-decoration: solid underline;
+		transition: all .2s ease-in;
 
 		&:hover {
-			text-decoration: none;
+			text-decoration-color: transparent;
 		}
 	}
 
@@ -974,27 +975,31 @@
 /* Nav */
 
 	#nav {
-		margin: 2.5em 0 0 0;
+		margin: 2em 0 0 0;
 
 		> ul {
 			margin: 0;
+			line-height: 0;
 
 			> li {
 				display: inline-block;
 				font-style: italic;
 				margin: 0 0.35em 0 0.35em;
+				padding: 0;
 
 				> ul {
 					display: none;
 				}
 
 				> a {
-					border-radius: 5px;
+					display: inline-block;
 					color: #5d5d5d;
+					line-height: 1.3em;
 					text-decoration: none;
 					padding: 0.6em 1.2em 0.6em 1.2em;
-					@include vendor('transition', 'background-color .25s ease-in-out');
+					border-radius: 5px;
 					outline: 0;
+					transition: background-color .2s ease-in;
 				}
 
 				&:hover, &.active {
@@ -1212,6 +1217,14 @@
 
 			a {
 				color: inherit;
+				text-decoration: underline transparent;
+				transition: text-decoration .2s ease-in;
+
+				&:hover {
+					text-decoration-color: currentColor;
+					text-decoration-thickness: 1px;
+					text-underline-offset: 2px;
+				}
 			}
 		}
 
@@ -1803,4 +1816,5 @@
 	}
 
 /* New Imports */
-	@import "pagination";
+@import "pagination";
+@import "bubble-buttons";

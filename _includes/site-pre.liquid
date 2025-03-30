@@ -17,5 +17,5 @@
     <link rel="stylesheet" href="assets/fontawesome/css/solid.css" />
     <link rel="stylesheet" href="assets/fontawesome/css/brands.css" />
 </head>
-<body class="{{ page.cssClass }} is-preload">
+<body class="{{ page.cssClass }} {{ site.bodyClasses | join: " " }} is-preload">
     <div id="page-wrapper">

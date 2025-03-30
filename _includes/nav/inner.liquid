@@ -24,7 +24,7 @@
         {% endif %}
 
         <li {% if current %}class="current"{% endif %}>
-            <a href="{{ url }}">{{ item.title }}</a>
+            <a href="{{ url }}"><span>{{ item.title }}</span></a>
             {% if item.children %}
                 {%  include nav/inner.liquid items=item.children %}
             {% endif %}
