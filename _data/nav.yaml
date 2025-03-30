@@ -20,6 +20,10 @@ items:
     title: Home
     url: /
   -
+    title: Blog
+    url: /blog
+    section: blog
+  -
     title: Dropdown
     url: "#"
     children:

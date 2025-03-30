@@ -77,7 +77,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      section: "right-sidebar"
+      section: "blog"
       dateForSubtitle: true
       comments: true
   -

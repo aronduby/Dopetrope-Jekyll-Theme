@@ -1831,7 +1831,7 @@ ul.social li a.fa-youtube {
   position: relative;
   background: #fff;
   border-bottom: solid 1px #ccc;
-  padding: 5em 0 4em 0;
+  padding: 5em 0 3.5em 0;
   text-align: center;
 }
 #header h1 {
@@ -1844,7 +1844,7 @@ ul.social li a.fa-youtube {
 
 /* Nav */
 #nav {
-  margin: 2em 0 0 0;
+  margin: 2.5em 0 0 0;
 }
 #nav > ul {
   margin: 0;

@@ -16,18 +16,7 @@
             {% assign current = true %}
         {% endif %}
 
-        {% capture relativeStr %}
-            {{ url }} {{ pageAbsUrl }}
-        {%endcapture%}
-        {% assign relatives = relativeStr | split:' ' %}
-
         <li {% if current %}class="current"{% endif %}>
-            {% comment %}<pre title="url">{{ url }}</pre>
-            <pre title="page.url">{{ page.url }}</pre>
-            <pre title="relative">{{ relatives | inspect }}</pre>
-            <pre title="page.section">{{ page.section | default: ' '}}</pre>
-            <pre title="current">{{ current }}</pre>{% endcomment %}
-
             {% capture linkContent %}
                 {% if include.level == 0 %}
                     {% assign pre = '<span>' %}
