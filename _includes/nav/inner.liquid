@@ -1,20 +1,33 @@
 <ul>
+    {% assign pageAbsUrl = page.url | absolute_url %}
+
     {% for item in include.items %}
         {% assign first = item.url | slice: 0 %}
         {% if first == '#' %}
-            {% assign url = item.url | prepend: page.url %}
+            {% assign url = item.url | prepend: page.url | relative_url %}
         {% else %}
-            {% assign url = item.url | relative_url %}
+            {% assign url = item.url | absolute_url %}
         {% endif %}
 
         {% assign current = false %}
-        {% if page.url == url %}
+        {% if pageAbsUrl == url %}
             {% assign current = true %}
         {% elsif page.section and item.section and page.section == item.section %}
             {% assign current = true %}
         {% endif %}
 
+        {% capture relativeStr %}
+            {{ url }} {{ pageAbsUrl }}
+        {%endcapture%}
+        {% assign relatives = relativeStr | split:' ' %}
+
         <li {% if current %}class="current"{% endif %}>
+            {% comment %}<pre title="url">{{ url }}</pre>
+            <pre title="page.url">{{ page.url }}</pre>
+            <pre title="relative">{{ relatives | inspect }}</pre>
+            <pre title="page.section">{{ page.section | default: ' '}}</pre>
+            <pre title="current">{{ current }}</pre>{% endcomment %}
+
             {% capture linkContent %}
                 {% if include.level == 0 %}
                     {% assign pre = '<span>' %}
