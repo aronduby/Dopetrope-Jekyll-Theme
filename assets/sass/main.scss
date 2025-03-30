@@ -575,16 +575,21 @@
 			}
 		}
 
-		&.icon-after {
-			@include icon(after);
-		}
-
 		&.icon:before,
 		&.icon-after:after {
 			opacity: 0.35;
 			position: relative;
 			top: 0.05em;
 			margin-right: 0.75em;
+		}
+
+		&.icon-after {
+			@include icon(after);
+
+			&::after {
+				margin-right: 0;
+				margin-left: 0.75em;
+			}
 		}
 
 		&.large {

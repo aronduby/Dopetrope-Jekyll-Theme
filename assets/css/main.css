@@ -1449,6 +1449,20 @@ button.alt2:active,
 .button.alt2:active {
   background: #75676b;
 }
+input[type=button].icon:before, input[type=button].icon-after:after,
+input[type=submit].icon:before,
+input[type=submit].icon-after:after,
+input[type=reset].icon:before,
+input[type=reset].icon-after:after,
+button.icon:before,
+button.icon-after:after,
+.button.icon:before,
+.button.icon-after:after {
+  opacity: 0.35;
+  position: relative;
+  top: 0.05em;
+  margin-right: 0.75em;
+}
 input[type=button].icon-after.solid,
 input[type=submit].icon-after.solid,
 input[type=reset].icon-after.solid,
@@ -1482,19 +1496,13 @@ button.icon-after:after,
   text-rendering: auto;
   text-decoration: none;
 }
-input[type=button].icon:before, input[type=button].icon-after:after,
-input[type=submit].icon:before,
-input[type=submit].icon-after:after,
-input[type=reset].icon:before,
-input[type=reset].icon-after:after,
-button.icon:before,
-button.icon-after:after,
-.button.icon:before,
-.button.icon-after:after {
-  opacity: 0.35;
-  position: relative;
-  top: 0.05em;
-  margin-right: 0.75em;
+input[type=button].icon-after::after,
+input[type=submit].icon-after::after,
+input[type=reset].icon-after::after,
+button.icon-after::after,
+.button.icon-after::after {
+  margin-right: 0;
+  margin-left: 0.75em;
 }
 input[type=button].large,
 input[type=submit].large,
