@@ -24,9 +24,22 @@
         {% endif %}
 
         <li {% if current %}class="current"{% endif %}>
-            <a href="{{ url }}"><span>{{ item.title }}</span></a>
+            {% capture linkContent %}
+                {% if include.level == 0 %}
+                    {% assign pre = '<span>' %}
+                    {% assign post = '</span>' %}
+                {% else %}
+                    {% assign pre = '' %}
+                    {% assign post = '' %}
+                {% endif %}
+                {{ item.title | prepend: pre | append: post }}
+            {% endcapture %}
+
+            <a href="{{ url }}">{{ linkContent }}</a>
+
             {% if item.children %}
-                {%  include nav/inner.liquid items=item.children %}
+                {% assign newLevel = include.level | plus:1 %}
+                {% include nav/inner.liquid items=item.children level=newLevel %}
             {% endif %}
         </li>
     {% endfor %}
