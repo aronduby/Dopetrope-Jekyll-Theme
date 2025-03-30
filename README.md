@@ -4,7 +4,6 @@ Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 
 ## Todo Next
 - Sidebar content? Tied to the collection maybe?
-- CSS variables, at least for colors
 - Better fake images than the blurred
 - Rewrite this readme to add some more details about usage
 

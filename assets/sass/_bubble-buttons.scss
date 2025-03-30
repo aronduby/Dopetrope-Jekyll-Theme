@@ -5,6 +5,8 @@
 /// aren't using pseudo elements you likely will still need 1 span for the proper layering.
 ///
 @use "sass:selector";
+@use "sass:color";
+@use "colors";
 @import "libs/mixins";
 
 // opt-in with the bubbleButtons class on the body
@@ -18,7 +20,8 @@ body.bubbleButtons {
     #nav > ul > li > a,
     .social a {
         --bubble-bg-scale: 0;
-        --bubble-bg: rgb(0 0 0 / 15%);
+        --bubble-bg: #{color.change(colors.$black, $alpha: 0.15)};
+
         position: relative;
         overflow: hidden;
         transition: all .3s ease-in;
@@ -85,16 +88,16 @@ body.bubbleButtons {
     // Specific Overrides
     //
     .pagination a {
-        --bubble-bg: #d52349;
+        --bubble-bg: #{colors.$primary};
 
         &:hover {
-            color: #f8f8f8 !important;
+            color: colors.$neutral-100 !important;
         }
     }
 
     #{selector.append($_buttons, '.alt, .alt2')},
     .social a{
-        --bubble-bg: rgb(255 255 255 / 6%);
+        --bubble-bg: #{color.change(colors.$white, $alpha: 0.06)};
     }
 
 }
