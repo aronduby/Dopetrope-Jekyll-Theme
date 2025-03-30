@@ -1,11 +1,8 @@
 # Dopetrope-Jekyll-Theme
 
-Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
+### Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 
-## Todo Next
-- Sidebar content? Tied to the collection maybe?
-- Better fake images than the blurred
-- Rewrite this readme to add some more details about usage
+I need to figure out what should be here.
 
 ---
 
