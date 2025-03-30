@@ -1,7 +1,7 @@
 ---
 title: "Dolor Tempus Ipsum Feugiat Nulla"
 date: 2025-01-12 22:08:40 -0400
-featuredImage: pic08.jpg
+featuredImage: pic08.png
 ---
 
 Doming te assum cum, augue rebum takimata aliquam proident blandit laoreet eu nonummy elitr quis consetetur. Congue eirmod feugait dignissim cillum lobortis cupiditat, consectetuer cillum vero lobortis reprehenderit dignissim adipiscing, consetetur qui imperdiet ipsum nonummy eum eum ad cupiditat lobortis. Sit autem ex sunt ipsum id consectetur velit. Illum takimata obcaecat. Ullamcorper facilisi aliquip.

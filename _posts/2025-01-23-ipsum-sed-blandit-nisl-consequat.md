@@ -1,7 +1,7 @@
 ---
 title: "Ipsum Sed Blandit Nisl Consequat"
 date: 2025-01-23 22:11:49 -0400
-featuredImage:  pic07.jpg 
+featuredImage:  pic07.png 
 ---
 
 Labore anim cum sea praesent invidunt erat facilisi. Tation duo ea erat voluptate aute non aute dolor nihil accumsan dolor. Adipisici obcaecat eiusmod possim, iusto veniam cillum option est iusto consectetuer enim invidunt tincidunt tincidunt, rebum obcaecat consectetuer ullamcorper ea hendrerit labore assum enim. Rebum wisi volutpat aute magna duo voluptua non dolore euismod dolores nonumy. Elitr ex ipsum. Minim iusto ullamcorper.

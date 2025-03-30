@@ -1,7 +1,7 @@
 ---
 title: "Magna Tempus Lorem Feugiat"
 date: 2025-01-15 22:10:52 -0400
-featuredImage:  pic09.jpg 
+featuredImage:  pic09.png 
 ---
 
 Culpa kasd cupiditat tempor congue obcaecat aliquam laoreet, accusam kasd sea option velit euismod, aliquyam id erat laboris zzril mollit eiusmod tation iusto et ex cum. Dolores feugait justo nostrud ullamcorper nihil accusam vel sit. Reprehenderit molestie elitr veniam duo reprehenderit proident vero mazim consequat autem. Nonummy invidunt et. Imperdiet deserunt eos.

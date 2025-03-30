@@ -1,7 +1,7 @@
 ---
 title: "Blandi Tempus Aliqum?"
 date: 2024-01-10 21:55:43 -0400
-featuredImage: pic08.jpg
+featuredImage: pic08.png
 ---
 
 Zzril tation gubergren suscipit nisi vel laoreet. Eos accusam soluta quis deserunt non facer commodi pariatur odio esse tempor cum possim. Zzril lorem veniam est eleifend non sit aliqua aliquyam voluptate. Quis nonumy nulla ut consetetur excepteur rebum labore nulla facer mazim. Commodi mazim sint doming ad ullamcorper. Cum vel sed elitr aliquid sed feugait tempor obcaecat. No nam facilisi hendrerit sint amet duis. Minim duis sunt. In dolore eleifend. Ex sit id.
