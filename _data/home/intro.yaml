@@ -17,10 +17,10 @@ items:
 
 actions:
   -
-    href: \#
+    href: '#'
     variant:
     title: Get Started
   -
-    href: \#
+    href: '#'
     variant: alt
     title: Learn More

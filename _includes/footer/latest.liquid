@@ -6,7 +6,7 @@
         {% for post in site.posts limit:site.data.footer.latest.limit %}
             <li>
                 <span class="date">{{ post.date | date: "%b"  }} <strong>{{ post.date | date: "%e" }}</strong></span>
-                <h3><a href="{{ post.url }}" title="view post">{{ post.title }} </a></h3>
+                <h3><a href="{{ post.url | relative_url }}" title="view post">{{ post.title }} </a></h3>
                 {% comment %} we want this to be long enough to always go to another line, and then we'll line clamp it{% endcomment %}
                 <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
             </li>

@@ -2,13 +2,13 @@
 
 <ul class="actions">
     <li>
-        <a href="{{ post.url }}" class="button icon {{ site.data.posts.listing.actions.permalink.icon }}">
+        <a href="{{ post.url | relative_url }}" class="button icon {{ site.data.posts.listing.actions.permalink.icon }}">
             <span><span>{{ site.data.posts.listing.actions.permalink.title }}</span></span>
         </a>
     </li>
     {% if post.comments %}
         <li>
-            <a href="{{ post.url }}#comments" class="button alt icon {{ site.data.posts.listing.actions.secondary.icon }}">
+            <a href="{{ post.url | relative_url }}#comments" class="button alt icon {{ site.data.posts.listing.actions.secondary.icon }}">
                 <span><span>{{ site.data.posts.listing.actions.secondary.title }}</span></span>
             </a>
         </li>

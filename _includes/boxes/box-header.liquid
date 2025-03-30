@@ -13,10 +13,10 @@ Variables:
 
 {%if include.featuredImage %}
     {% capture img %}
-        <img src="images/{{ include.featuredImage }}" alt="" />
+        <img src="{{ include.featuredImage | prepend: 'images/' | relative_url }}" alt="" />
     {% endcapture %}
     {% if include.url %}
-        <a href="{{ include.url }}" class="image featured">
+        <a href="{{ include.url | relative_url }}" class="image featured">
             {{ img }}
         </a>
     {% else %}

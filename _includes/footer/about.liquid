@@ -4,12 +4,12 @@
     </header>
     {% if site.data.footer.about.image %}
         {% if site.data.footer.about.image.url %}
-            <a href="#" class="image featured">
+            <a href="{{ site.data.footer.about.image.url | relative_url }}" class="image featured">
         {% else %}
             <div class="image featured">
         {% endif %}
 
-            <img src="{{ site.data.footer.about.image.src }}" alt="{{ site.data.footer.about.image.alt }}" />
+            <img src="{{ site.data.footer.about.image.src | relative_url }}" alt="{{ site.data.footer.about.image.alt }}" />
 
         {% if site.data.footer.about.image.url %}
             </a>
@@ -24,7 +24,7 @@
         <footer>
             <ul class="actions">
                 <li>
-                    <a href="{{ site.data.footer.about.action.url }}" class="button">
+                    <a href="{{ site.data.footer.about.action.url | relative_url }}" class="button">
                         <span><span>{{ site.data.footer.about.action.title }}</span></span>
                     </a>
                 </li>

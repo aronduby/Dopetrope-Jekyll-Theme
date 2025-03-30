@@ -8,14 +8,13 @@
 <head>
     <title>Dopetrope by HTML5 UP</title>
     <meta charset="utf-8" />
-    <base href="{{ site.baseUrl }}" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/fontawesome/css/solid.css" />
-    <link rel="stylesheet" href="assets/fontawesome/css/brands.css" />
+    <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }} " />
+    <link rel="stylesheet" href="{{ 'assets/fontawesome/css/fontawesome.css' | relative_url }} " />
+    <link rel="stylesheet" href="{{ 'assets/fontawesome/css/solid.css' | relative_url }} " />
+    <link rel="stylesheet" href="{{ 'assets/fontawesome/css/brands.css' | relative_url }} " />
 </head>
 <body class="{{ page.cssClass }} {{ site.bodyClasses | join: " " }} is-preload">
     <div id="page-wrapper">

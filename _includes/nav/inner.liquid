@@ -1,19 +1,10 @@
 <ul>
     {% for item in include.items %}
         {% assign first = item.url | slice: 0 %}
-
-        {% if first == '' %}
-            {% assign url = site.baseUrl %}
-        {% elsif first == '#' %}
+        {% if first == '#' %}
             {% assign url = item.url | prepend: page.url %}
-        {%  elsif first == '/' %}
-            {%  assign url = item.url %}
         {% else %}
-            {% if item.url contains '://' %}
-                {% assign url = item.url %}
-            {% else %}
-                {% assign url = item.url | prepend: site.baseUrl %}
-            {% endif %}
+            {% assign url = item.url | relative_url %}
         {% endif %}
 
         {% assign current = false %}
@@ -35,7 +26,7 @@
                 {{ item.title | prepend: pre | append: post }}
             {% endcapture %}
 
-            <a href="{{ url }}">{{ linkContent }}</a>
+            <a href="{{ url | relative_url }}">{{ linkContent }}</a>
 
             {% if item.children %}
                 {% assign newLevel = include.level | plus:1 %}

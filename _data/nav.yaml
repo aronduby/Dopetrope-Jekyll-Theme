@@ -18,7 +18,7 @@
 items:
   -
     title: Home
-    url:
+    url: /
   -
     title: Dropdown
     url: "#"

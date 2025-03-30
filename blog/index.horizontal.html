@@ -36,48 +36,4 @@ section: right-sidebar
         </div>
     </div>
 
-    {% if paginator.total_pages > 1 %}
-        {% assign prev = site.data.paginator.previous %}
-        {% assign next = site.data.paginator.next %}
-
-        <footer class="pagination">
-            <ul>
-                <li>
-                    {% capture prevContent %}
-                        <span><i class="fa fa-angles-left"></i>{{ prev }}</span>
-                    {% endcapture %}
-                    {% if paginator.previous_page %}
-                        <a href="{{ paginator.previous_page_path | relative_url }}">{{ prevContent }}</a>
-                    {% else %}
-                        <span>{{ prevContent }}</span>
-                    {% endif %}
-                </li>
-
-                {% for page in (1..paginator.total_pages) %}
-                    {% capture numberContent %}
-                        <span>{{ page }}</span>
-                    {% endcapture %}
-                    <li>
-                        {% if page == paginator.page %}
-                            {{ numberContent }}
-                        {% elsif page == 1 %}
-                            <a href="{{ site.paginate_path | relative_url | replace: 'page:num/', '' }}">{{ numberContent }}</a>
-                        {% else %}
-                            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ numberContent }}</a>
-                        {% endif %}
-                    </li>
-                {% endfor %}
-
-                <li>
-                    {% capture nextContent %}
-                        <span>{{ next }}<i class="fa fa-angles-right"></i></span>
-                    {% endcapture %}
-                    {% if paginator.next_page %}
-                        <a href="{{ paginator.next_page_path | relative_url }}">{{ nextContent }}</a>
-                    {% else %}
-                        <span>{{ nextContent }}</span>
-                    {% endif %}
-                </li>
-            </ul>
-        </footer>
-    {% endif %}
+    {% include paginator-links.liquid %}
