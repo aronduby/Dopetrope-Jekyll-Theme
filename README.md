@@ -2,7 +2,9 @@
 
 ### Another Jekyll Theme based on [Dopetrope][dopeTrope] by [HTML5 UP][html5up].
 
-I need to figure out what should be here.
+[View the preview][preview].
+
+I need to figure out what else should be here.
 
 ---
 
@@ -30,6 +32,7 @@ aj@lkn.io | @ajlkn
   - [jQuery][jq]
   - [Responsive Tools][rt]
 
+[preview]: <https://aronduby.github.io/Dopetrope-Jekyll-Theme/>
 [dopeTrope]: <https://html5up.net/dopetrope>
 [html5up]: <https://html5up.net/>
 [dd]: <http://dreametrydoodle.com>
