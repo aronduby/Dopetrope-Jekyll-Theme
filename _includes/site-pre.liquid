@@ -16,13 +16,11 @@
     <link rel="stylesheet" href="{{ 'assets/fontawesome/css/solid.css' | relative_url }} " />
     <link rel="stylesheet" href="{{ 'assets/fontawesome/css/brands.css' | relative_url }} " />
 
-    {% for href in site.customStyles %}
-        <link rel="stylesheet" href="{{ href | relative_url }} " />
-    {% endfor %}
-
     {% if jekyll.environment == "development" %}
         <link rel="stylesheet" href="{{ 'assets/css/scratch.css' | relative_url }}" />
     {% endif %}
+
+    {%  include project/site-pre.liquid %}
 </head>
 <body class="{{ page.cssClass }} {{ site.bodyClasses | join: " " }} is-preload">
     <div id="page-wrapper">
